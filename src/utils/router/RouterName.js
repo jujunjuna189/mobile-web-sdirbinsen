@@ -5,6 +5,7 @@ export const RouterName = {
     trakorpsDetail: "/trakorps-detail",
     trakorpsDetailSejarah: "/trakorps-detail-sejarah",
     trakorpsDetailLambangSatuan: "/trakorps-detail-lambang-satuan",
+    trakorpsDetailTradisiSatuan: "/trakorps-detail-tradisi-satuan",
     // Binman
     binman: "/binman",
     binmanPers: "/binman-personel",

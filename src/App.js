@@ -7,7 +7,10 @@ import { BinmanPetaJabatanListContextProvider } from './contexts/binman/BinmanPe
 import { BinmatListContextProvider } from './contexts/binmat/BinmatListContext';
 import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanContext';
 import { TrakorpsContextProvider } from './contexts/trakorps/TrakorpsContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage } from './pages';
+import { TrakorpsDetailContextProvider } from './contexts/trakorps/TrakorpsDetailContext';
+import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
+import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -31,13 +34,24 @@ function App() {
           </TrakorpsContextProvider>
         } />
         <Route path={RouterName.trakorpsDetail} element={
-          <TrakorpsDetailPage />
+          <TrakorpsDetailContextProvider>
+            <TrakorpsDetailPage />
+          </TrakorpsDetailContextProvider>
         } />
         <Route path={RouterName.trakorpsDetailSejarah} element={
-          <TrakorpsSejarahPage />
+          <TrakorpsDetailContextProvider>
+            <TrakorpsSejarahPage />
+          </TrakorpsDetailContextProvider>
         } />
         <Route path={RouterName.trakorpsDetailLambangSatuan} element={
-          <TrakorpsLambangSatuanPage />
+          <TrakorpsDetailLambangSatuanContextProvider>
+            <TrakorpsLambangSatuanPage />
+          </TrakorpsDetailLambangSatuanContextProvider>
+        } />
+        <Route path={RouterName.trakorpsDetailTradisiSatuan} element={
+          <TrakorpsDetailTradisiSatuanContextProvider>
+            <TrakorpsTradisiSatuanPage />
+          </TrakorpsDetailTradisiSatuanContextProvider>
         } />
         {/* Binman */}
         <Route path={RouterName.binman} element={

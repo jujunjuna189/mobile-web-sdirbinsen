@@ -35,7 +35,7 @@ const TrakorpsPage = () => {
                 <div className="grid grid-cols-2 gap-5 px-3 mt-4 justify-center">
                     {satuan?.data?.map((item, index) => {
                         return (
-                            <div key={index} className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.trakorpsDetail)}>
+                            <div key={index} className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.trakorpsDetail, { state: { satuan: { id: item.id } } })}>
                                 <div className="h-full bg-[#4B7D5E]">
                                     <div className="flex justify-center items-center py-1">
                                         <img src={item.logo} alt="icon" className="w-[50px] max-w-[50px] h-[55px] -mb-2" />

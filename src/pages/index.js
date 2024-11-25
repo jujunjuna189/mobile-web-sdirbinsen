@@ -13,6 +13,7 @@ import TrakorpsPage from "./trakorps";
 import TrakorpsDetailPage from "./trakorps/detail";
 import TrakorpsLambangSatuanPage from "./trakorps/detail/lambang_satuan";
 import TrakorpsSejarahPage from "./trakorps/detail/sejarah";
+import TrakorpsTradisiSatuanPage from "./trakorps/detail/tradisi_satuan";
 
 export {
     LoginPage,
@@ -21,6 +22,7 @@ export {
     TrakorpsDetailPage,
     TrakorpsLambangSatuanPage,
     TrakorpsSejarahPage,
+    TrakorpsTradisiSatuanPage,
     BinmanPage,
     BinmanPersPage,
     BinmanPersListPage,
