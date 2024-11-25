@@ -9,6 +9,8 @@ export const API_SATUAN_LAMBANG_GET = `${REACT_APP_API_URL}admin/satuan/lambang`
 export const API_SATUAN_TRADISI_GET = `${REACT_APP_API_URL}admin/satuan/tradisi`;
 // Prestasi Satuan
 export const API_SATUAN_PRESTASI_GET = `${REACT_APP_API_URL}admin/satuan-prestasi`;
+// Pejabat dansat
+export const API_SATUAN_PEJABAT_DANSAT_GET = `${REACT_APP_API_URL}admin/satuan-jabatan-dansat`;
 // Peta Jabatan
 export const API_PETA_JABATAN_GET = `${REACT_APP_API_URL}admin/peta-jabatan`;
 // Material

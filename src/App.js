@@ -8,10 +8,11 @@ import { BinmatListContextProvider } from './contexts/binmat/BinmatListContext';
 import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanContext';
 import { TrakorpsContextProvider } from './contexts/trakorps/TrakorpsContext';
 import { TrakorpsDetailContextProvider } from './contexts/trakorps/TrakorpsDetailContext';
+import { TrakorpsDetailDataPejabatDansatContextProvider } from './contexts/trakorps/TrakorpsDetailDataPejabatDansatContext';
 import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/TrakorpsDetailDataPrestasiContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDataPrestasiPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -58,6 +59,11 @@ function App() {
           <TrakorpsDetailDataPrestasiContextProvider>
             <TrakorpsDataPrestasiPage />
           </TrakorpsDetailDataPrestasiContextProvider>
+        } />
+        <Route path={RouterName.trakorpsDetailDataPejabatDansat} element={
+          <TrakorpsDetailDataPejabatDansatContextProvider>
+            <TrakorpsDataPejabatDansatPage />
+          </TrakorpsDetailDataPejabatDansatContextProvider>
         } />
         {/* Binman */}
         <Route path={RouterName.binman} element={
