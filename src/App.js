@@ -8,9 +8,10 @@ import { BinmatListContextProvider } from './contexts/binmat/BinmatListContext';
 import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanContext';
 import { TrakorpsContextProvider } from './contexts/trakorps/TrakorpsContext';
 import { TrakorpsDetailContextProvider } from './contexts/trakorps/TrakorpsDetailContext';
+import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/TrakorpsDetailDataPrestasiContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDataPrestasiPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -52,6 +53,11 @@ function App() {
           <TrakorpsDetailTradisiSatuanContextProvider>
             <TrakorpsTradisiSatuanPage />
           </TrakorpsDetailTradisiSatuanContextProvider>
+        } />
+        <Route path={RouterName.trakorpsDetailDataPrestasi} element={
+          <TrakorpsDetailDataPrestasiContextProvider>
+            <TrakorpsDataPrestasiPage />
+          </TrakorpsDetailDataPrestasiContextProvider>
         } />
         {/* Binman */}
         <Route path={RouterName.binman} element={

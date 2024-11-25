@@ -11,6 +11,7 @@ import BinmatSatuanPage from "./binmat/satuan";
 import BoardPage from "./board";
 import TrakorpsPage from "./trakorps";
 import TrakorpsDetailPage from "./trakorps/detail";
+import TrakorpsDataPrestasiPage from "./trakorps/detail/data_prestasi";
 import TrakorpsLambangSatuanPage from "./trakorps/detail/lambang_satuan";
 import TrakorpsSejarahPage from "./trakorps/detail/sejarah";
 import TrakorpsTradisiSatuanPage from "./trakorps/detail/tradisi_satuan";
@@ -23,6 +24,7 @@ export {
     TrakorpsLambangSatuanPage,
     TrakorpsSejarahPage,
     TrakorpsTradisiSatuanPage,
+    TrakorpsDataPrestasiPage,
     BinmanPage,
     BinmanPersPage,
     BinmanPersListPage,

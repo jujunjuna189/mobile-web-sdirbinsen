@@ -7,6 +7,8 @@ export const API_SATUAN_GET = `${REACT_APP_API_URL}searcher/satuan`;
 export const API_SATUAN_LAMBANG_GET = `${REACT_APP_API_URL}admin/satuan/lambang`;
 // Tradisi Satuan
 export const API_SATUAN_TRADISI_GET = `${REACT_APP_API_URL}admin/satuan/tradisi`;
+// Prestasi Satuan
+export const API_SATUAN_PRESTASI_GET = `${REACT_APP_API_URL}admin/satuan-prestasi`;
 // Peta Jabatan
 export const API_PETA_JABATAN_GET = `${REACT_APP_API_URL}admin/peta-jabatan`;
 // Material
