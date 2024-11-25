@@ -24,7 +24,7 @@ const BinmanPersPage = () => {
                     </div>
                 </div>
                 <div className="px-3 mt-4 justify-center">
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3" onClick={() => navigation(RouterName.binmanPersList)}>
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3" onClick={() => navigation(RouterName.binmanPersList, { state: { category: 'Akmil' } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier2} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -32,7 +32,7 @@ const BinmanPersPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Akmil</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binmanPersList, { state: { category: 'Sepa Pk' } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier2} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -40,7 +40,7 @@ const BinmanPersPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Sepa Pk</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binmanPersList, { state: { category: 'Secapa PK' } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier2} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -48,7 +48,7 @@ const BinmanPersPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Secapa PK</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binmanPersList, { state: { category: 'Ba PK' } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier2} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -56,7 +56,7 @@ const BinmanPersPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Ba PK</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binmanPersList, { state: { category: 'Ba Reg' } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier2} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -64,7 +64,7 @@ const BinmanPersPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Ba Reg</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binmanPersList, { state: { category: 'Ta' } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier2} alt="icon" className="w-[40px] -mb-1" />
                         </div>

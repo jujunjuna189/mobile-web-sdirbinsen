@@ -2,6 +2,12 @@ import LoginPage from "./auth/login";
 import BinmanPage from "./binman";
 import BinmanPersPage from "./binman/data_pers";
 import BinmanPersListPage from "./binman/data_pers/personel";
+import BinmanKompersSatjarPage from "./binman/komper_satjas";
+import BinmanPetaJabatanPage from "./binman/peta_jabatan";
+import BinmanPetaJabatanListPage from "./binman/peta_jabatan/list";
+import BinmatPage from "./binmat";
+import BinmatListPage from "./binmat/list";
+import BinmatSatuanPage from "./binmat/satuan";
 import BoardPage from "./board";
 import TrakorpsPage from "./trakorps";
 import TrakorpsDetailPage from "./trakorps/detail";
@@ -18,4 +24,10 @@ export {
     BinmanPage,
     BinmanPersPage,
     BinmanPersListPage,
+    BinmanPetaJabatanPage,
+    BinmanPetaJabatanListPage,
+    BinmanKompersSatjarPage,
+    BinmatPage,
+    BinmatSatuanPage,
+    BinmatListPage,
 }

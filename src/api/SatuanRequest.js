@@ -2,10 +2,10 @@ import axios from "axios";
 import { API_SATUAN_GET } from "../config/api";
 import { getLocalUser } from "../service/LocalStorage";
 
-export const getSatuanRequest = async () => {
+export const getSatuanRequest = async ({ filter = "" }) => {
     const user = getLocalUser();
     try {
-        const response = await axios.get(`${API_SATUAN_GET}`, {
+        const response = await axios.get(`${API_SATUAN_GET}?${filter}`, {
             headers: {
                 Authorization: `bearer ${user.token}`,
             }

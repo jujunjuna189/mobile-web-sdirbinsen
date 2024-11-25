@@ -1,7 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/auth/AuthContext';
 import { LoginContextProvider } from './contexts/auth/LoginContext';
-import { BinmanPage, BinmanPersListPage, BinmanPersPage, BoardPage, LoginPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage } from './pages';
+import { BinmanPersContextProvider } from './contexts/binman/BinmanPersContext';
+import { BinmanPetaJabatanContextProvider } from './contexts/binman/BinmanPetaJabatanContext';
+import { BinmanPetaJabatanListContextProvider } from './contexts/binman/BinmanPetaJabatanListContext';
+import { BinmatListContextProvider } from './contexts/binmat/BinmatListContext';
+import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanContext';
+import { TrakorpsContextProvider } from './contexts/trakorps/TrakorpsContext';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -20,7 +26,9 @@ function App() {
         } />
         {/* Trakorps */}
         <Route path={RouterName.trakorps} element={
-          <TrakorpsPage />
+          <TrakorpsContextProvider>
+            <TrakorpsPage />
+          </TrakorpsContextProvider>
         } />
         <Route path={RouterName.trakorpsDetail} element={
           <TrakorpsDetailPage />
@@ -39,7 +47,35 @@ function App() {
           <BinmanPersPage />
         } />
         <Route path={RouterName.binmanPersList} element={
-          <BinmanPersListPage />
+          <BinmanPersContextProvider>
+            <BinmanPersListPage />
+          </BinmanPersContextProvider>
+        } />
+        <Route path={RouterName.binmanPetaJabatan} element={
+          <BinmanPetaJabatanContextProvider>
+            <BinmanPetaJabatanPage />
+          </BinmanPetaJabatanContextProvider>
+        } />
+        <Route path={RouterName.binmanPetaJabatanList} element={
+          <BinmanPetaJabatanListContextProvider>
+            <BinmanPetaJabatanListPage />
+          </BinmanPetaJabatanListContextProvider>
+        } />
+        <Route path={RouterName.binmanKompersSatjar} element={
+          <BinmanKompersSatjarPage />
+        } />
+        <Route path={RouterName.binmat} element={
+          <BinmatPage />
+        } />
+        <Route path={RouterName.binmatSatuan} element={
+          <BinmatSatuanContextProvider>
+            <BinmatSatuanPage />
+          </BinmatSatuanContextProvider>
+        } />
+        <Route path={RouterName.binmatList} element={
+          <BinmatListContextProvider>
+            <BinmatListPage />
+          </BinmatListContextProvider>
         } />
       </Routes>
     </AuthContextProvider>

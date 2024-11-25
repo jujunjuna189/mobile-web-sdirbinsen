@@ -18,7 +18,7 @@ const BoardPage = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-5 px-3 mt-6 justify-center">
                     <div className="h-[5.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.trakorps)}>
-                        <div class=" h-full bg-[#4B7D5E]">
+                        <div className=" h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icBase} alt="icon" className="w-[55px] -mb-2" />
                             </div>
@@ -28,7 +28,7 @@ const BoardPage = () => {
                         </div>
                     </div>
                     <div className="h-[5.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binman)}>
-                        <div class="h-full bg-[#4B7D5E]">
+                        <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icInfantry} alt="icon" className="w-[55px] -mb-2" />
                             </div>
@@ -37,8 +37,8 @@ const BoardPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="h-[5.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]">
-                        <div class="h-full bg-[#4B7D5E]">
+                    <div className="h-[5.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binmat)}>
+                        <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icTank} alt="icon" className="w-[55px] -mb-2" />
                             </div>
@@ -50,7 +50,7 @@ const BoardPage = () => {
                 </div>
                 <div className="flex justify-center gap-5 px-3 mt-6">
                     <div className="h-[5.5rem] w-[6.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]">
-                        <div class="h-full bg-[#4B7D5E]">
+                        <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icDataGathering} alt="icon" className="w-[55px] -mb-2" />
                             </div>
@@ -60,7 +60,7 @@ const BoardPage = () => {
                         </div>
                     </div>
                     <div className="h-[5.5rem] w-[6.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]">
-                        <div class="h-full bg-[#4B7D5E]">
+                        <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icOnlineLesson} alt="icon" className="w-[55px] -mb-2" />
                             </div>

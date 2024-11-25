@@ -16,10 +16,22 @@ import icExperts from "./icon/icExperts.png";
 import icMilitaryMan from "./icon/icMilitaryMan.png";
 import icSoldier from "./icon/icSoldier.png";
 import icSoldier2 from "./icon/icSoldier2.png";
+import icSoldier3 from "./icon/icSoldier3.png";
 import icMarchingBand2 from "./icon/icMarchingBand2.png";
 import icMarchingBand from "./icon/icMarchingBand.png";
 import icArmy from "./icon/icArmy.png";
 import icPeople from "./icon/icPeople.png";
+import icArmedForces from "./icon/icArmedForces.png";
+import icAmmo from "./icon/icAmmo.png";
+import icArtillery from "./icon/icArtillery.png";
+import icSettings from "./icon/icSettings.png";
+import icManagement from "./icon/icManagement.png";
+import icTowTruck from "./icon/icTowTruck.png";
+import icBrain from "./icon/icBrain.png";
+import icBinoculars from "./icon/icBinoculars.png";
+import icCompass from "./icon/icCompass.png";
+import icLightningCircle from "./icon/icLightningCircle.png";
+import icExplosive from "./icon/icExplosive.png";
 import bnrName from "./banner/bannerName.webp";
 import bnrBg from "./banner/bannerBg.webp";
 import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
@@ -44,10 +56,22 @@ export {
     icMilitaryMan,
     icSoldier,
     icSoldier2,
+    icSoldier3,
     icMarchingBand2,
     icMarchingBand,
     icArmy,
     icPeople,
+    icArmedForces,
+    icAmmo,
+    icArtillery,
+    icSettings,
+    icManagement,
+    icTowTruck,
+    icBrain,
+    icBinoculars,
+    icCompass,
+    icLightningCircle,
+    icExplosive,
     bnrName,
     bnrBg,
     fnAgencyFbBold,

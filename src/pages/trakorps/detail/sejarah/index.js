@@ -11,7 +11,7 @@ const TrakorpsSejarahPage = () => {
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto">
                 <Navbar />
                 <div className="px-3 mt-1">
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
                         <div className="flex justify-center items-center py-1">
                             <img src={icWorldWar} alt="icon" className="w-[40px] -mb-1" />
                         </div>

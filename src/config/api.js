@@ -3,6 +3,9 @@ const REACT_APP_API_URL = `${process.env.REACT_APP_ENV}/api/v1/`;
 export const API_AUTH_LOGIN = `${REACT_APP_API_URL}auth/login`;
 
 export const API_SATUAN_GET = `${REACT_APP_API_URL}searcher/satuan`;
+// Peta Jabatan
+export const API_PETA_JABATAN_GET = `${REACT_APP_API_URL}admin/peta-jabatan`;
+// Material
 export const API_MATERIAL_GET = `${REACT_APP_API_URL}searcher/material`;
 export const API_PERSONIL_GET = `${REACT_APP_API_URL}searcher/personil`;
 // Binsiapsat

@@ -28,7 +28,7 @@ const TrakorpsLambangSatuanPage = () => {
                     </div>
                 </div>
                 <div className="px-3 mt-4 justify-center">
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
                         <div className="flex justify-center items-center py-1">
                             <img src={icWorldWar} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -36,7 +36,7 @@ const TrakorpsLambangSatuanPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Sejarah</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
                         <div className="flex justify-center items-center py-1">
                             <img src={icMilitary} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -44,7 +44,7 @@ const TrakorpsLambangSatuanPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Lambang Satuan</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
                         <div className="flex justify-center items-center py-1">
                             <img src={icCultural} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -52,7 +52,7 @@ const TrakorpsLambangSatuanPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Tradisi Satuan</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
                         <div className="flex justify-center items-center py-1">
                             <img src={icExperts} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -60,7 +60,7 @@ const TrakorpsLambangSatuanPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Prestasi</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
                         <div className="flex justify-center items-center py-1">
                             <img src={icMilitaryMan} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -68,7 +68,7 @@ const TrakorpsLambangSatuanPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Pejabat Dansat</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -76,7 +76,7 @@ const TrakorpsLambangSatuanPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Purnawirawan</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
                         <div className="flex justify-center items-center py-1">
                             <img src={icMarchingBand2} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -84,7 +84,7 @@ const TrakorpsLambangSatuanPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Lagu Mars</strong>
                         </div>
                     </div>
-                    <div class="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
                         <div className="flex justify-center items-center py-1">
                             <img src={icMarchingBand} alt="icon" className="w-[40px] -mb-1" />
                         </div>
