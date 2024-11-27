@@ -13,7 +13,7 @@ import { TrakorpsDetailDataPejabatDansatContextProvider } from './contexts/trako
 import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/TrakorpsDetailDataPrestasiContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -39,6 +39,16 @@ function App() {
         <Route path={RouterName.trakorpsDetail} element={
           <TrakorpsDetailContextProvider>
             <TrakorpsDetailPage />
+          </TrakorpsDetailContextProvider>
+        } />
+        <Route path={RouterName.trakorpsDetailHymne} element={
+          <TrakorpsDetailContextProvider>
+            <TrakorpsHymnePage />
+          </TrakorpsDetailContextProvider>
+        } />
+        <Route path={RouterName.trakorpsDetailMars} element={
+          <TrakorpsDetailContextProvider>
+            <TrakorpsMarsPage />
           </TrakorpsDetailContextProvider>
         } />
         <Route path={RouterName.trakorpsDetailSejarah} element={
