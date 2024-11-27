@@ -32,6 +32,8 @@ import icBinoculars from "./icon/icBinoculars.png";
 import icCompass from "./icon/icCompass.png";
 import icLightningCircle from "./icon/icLightningCircle.png";
 import icExplosive from "./icon/icExplosive.png";
+import icBookMilitary from "./icon/icBookMilitary.png";
+import icBook from "./icon/icBook.png";
 import bnrName from "./banner/bannerName.webp";
 import bnrBg from "./banner/bannerBg.webp";
 import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
@@ -72,6 +74,8 @@ export {
     icCompass,
     icLightningCircle,
     icExplosive,
+    icBookMilitary,
+    icBook,
     bnrName,
     bnrBg,
     fnAgencyFbBold,

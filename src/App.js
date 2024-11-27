@@ -6,13 +6,14 @@ import { BinmanPetaJabatanContextProvider } from './contexts/binman/BinmanPetaJa
 import { BinmanPetaJabatanListContextProvider } from './contexts/binman/BinmanPetaJabatanListContext';
 import { BinmatListContextProvider } from './contexts/binmat/BinmatListContext';
 import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanContext';
+import { BukuPintarListContextProvider } from './contexts/buku_pintar/BukuPintarContext';
 import { TrakorpsContextProvider } from './contexts/trakorps/TrakorpsContext';
 import { TrakorpsDetailContextProvider } from './contexts/trakorps/TrakorpsDetailContext';
 import { TrakorpsDetailDataPejabatDansatContextProvider } from './contexts/trakorps/TrakorpsDetailDataPejabatDansatContext';
 import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/TrakorpsDetailDataPrestasiContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDetailPage, TrakorpsLambangSatuanPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -102,6 +103,15 @@ function App() {
           <BinmatListContextProvider>
             <BinmatListPage />
           </BinmatListContextProvider>
+        } />
+        {/* Buku Pintar */}
+        <Route path={RouterName.bukuPintar} element={
+          <BukuPintarPage />
+        } />
+        <Route path={RouterName.bukuPintarList} element={
+          <BukuPintarListContextProvider>
+            <BukuPintarListPage />
+          </BukuPintarListContextProvider>
         } />
       </Routes>
     </AuthContextProvider>

@@ -19,4 +19,7 @@ export const RouterName = {
     binmat: "/binmat",
     binmatSatuan: "/binmat-satuan",
     binmatList: "/binmat-list",
+    // Buku Pintar
+    bukuPintar: "/buku-pintar",
+    bukuPintarList: "/buku-pintar-list",
 }
