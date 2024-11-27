@@ -24,13 +24,21 @@ const TrakorpsLambangSatuanPage = () => {
                 </div>
                 <div className="px-3 mt-4 justify-center">
                     <div className="bg-white rounded-md min-h-[75vh] p-3">
+                        {(!satuan?.picture && !satuan?.deskripsi) && (
+                            <div className="flex justify-center py-3 flex-col items-center">
+                                <span className="font-semibold">Tidak ada data</span>
+                                <span>Data Lambang Satuan Belum Ditambahkan</span>
+                            </div>
+                        )}
                         {satuan?.picture && (
                             <img src={satuan.picture} alt={"lambang"} className={`w-full aspect-video rounded-lg border ${!satuan.picture && "bg-slate-400"}`} />
                         )}
-                        <div className="mt-2">
-                            <span className="font-semibold">Deskripsi</span>
-                            <div className="mt-1" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: satuan?.deskripsi ?? '-' }} />
-                        </div>
+                        {satuan?.deskripsi && (
+                            <div className="mt-2">
+                                <span className="font-semibold">Deskripsi</span>
+                                <div className="mt-1" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: satuan?.deskripsi ?? '-' }} />
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="h-10" />

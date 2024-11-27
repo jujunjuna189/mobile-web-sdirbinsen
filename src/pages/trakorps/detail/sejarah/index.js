@@ -32,6 +32,12 @@ const TrakorpsSejarahPage = () => {
                 </div>
                 <div className="px-3 mt-4 justify-center">
                     <div className="bg-white rounded-md min-h-[75vh] p-3">
+                        {!satuan?.sejarah && (
+                            <div className="flex justify-center py-3 flex-col items-center">
+                                <span className="font-semibold">Tidak ada data</span>
+                                <span>Data Sejarah Belum Ditambahkan</span>
+                            </div>
+                        )}
                         <div className="mt-3" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: replaces({ originalHTML: satuan?.sejarah }) }} />
                     </div>
                 </div>

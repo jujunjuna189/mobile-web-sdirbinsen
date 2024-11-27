@@ -40,18 +40,26 @@ const TrakorpsTradisiSatuanPage = () => {
                 </div>
                 <div className="px-3 mt-4 justify-center">
                     <div className="bg-white rounded-md min-h-[75vh] p-3">
+                        {(!satuan?.video && !satuan?.deskripsi) && (
+                            <div className="flex justify-center py-3 flex-col items-center">
+                                <span className="font-semibold">Tidak ada data</span>
+                                <span>Data Tradisi Satuan Belum Ditambahkan</span>
+                            </div>
+                        )}
                         {(satuan?.video && checkFileType(satuan?.video) === "image") && (
-                            <img src={satuan?.video} alt={"lambang"} className={`w-full aspect-video rounded-lg border ${!satuan?.video && "bg-slate-400"}`} />
+                            <img src={satuan?.video} alt={"tradisi"} className={`w-full aspect-video rounded-lg border ${!satuan?.video && "bg-slate-400"}`} />
                         )}
                         {(satuan?.video && checkFileType(satuan?.video) === "video") && (
                             <video controls>
                                 <source src={satuan?.video + '?time=' + new Date().getTime()} />
                             </video>
                         )}
-                        <div className="mt-2">
-                            <span className="font-semibold">Deskripsi</span>
-                            <div className="mt-1" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: satuan?.deskripsi ?? '-' }} />
-                        </div>
+                        {satuan?.deskripsi && (
+                            <div className="mt-2">
+                                <span className="font-semibold">Deskripsi</span>
+                                <div className="mt-1" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: satuan?.deskripsi ?? '-' }} />
+                            </div>
+                        )}
                     </div>
                 </div>
                 <div className="h-10" />
