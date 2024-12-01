@@ -21,6 +21,11 @@ const BukuPintarListPage = () => {
                     </div>
                 </div>
                 <div className="grid grid-cols-2 gap-3 px-3 mt-2 justify-center">
+                    {learning?.data?.length === 0 && (
+                        <div className="bg-[#4B7D5E] rounded-md px-2 py-5 bg-opacity-60 relative mb-2 text-center flex flex-col">
+                            <span className="text-white font-medium text-base">Tidak ada data buku</span>
+                        </div>
+                    )}
                     {learning?.data?.map((item, index) => {
                         return (
                             <div key={index} className="bg-[#4B7D5E] rounded-md px-2 py-2 bg-opacity-60 relative">

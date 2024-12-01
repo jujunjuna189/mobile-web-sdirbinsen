@@ -1,8 +1,10 @@
 import { bnrBg, icArmedForces, icDataGathering, icFilter, imgMainBg } from "../../../assets";
 import { Content, InputSearch, Navbar } from "../../../components";
+import { UseBinmanKompersSatjasListContext } from "../../../contexts/binman/BinmanKompersSatjasContext";
+import { dateFormatterV4 } from "../../../utils";
 
 const BinmanKompersSatjarPage = () => {
-
+    const { kompers, onSearch } = UseBinmanKompersSatjasListContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -43,25 +45,25 @@ const BinmanKompersSatjarPage = () => {
                 </div>
                 <div className="sticky top-0 z-10 bg-black py-2">
                     <div className="flex gap-3 px-3">
-                        <InputSearch onChange={(value) => { }} placeholder="Cari Kompers Satjar..." />
+                        <InputSearch onChange={(value) => onSearch({ value: value })} placeholder="Cari Kompers Satjar..." />
                         <div className="bg-white px-4 py-2 rounded-lg flex justify-center items-center">
                             <img src={icFilter} alt="icon" className="w-8" />
                         </div>
                     </div>
                 </div>
                 <div className="px-3 mt-4 justify-center">
-                    {([1, 2])?.map((item, index) => {
+                    {kompers?.data?.map((item, index) => {
                         return (
                             <div key={index} className="bg-[#4B7D5E] border border-[#B8C558] rounded-md px-2 py-2 bg-opacity-60 relative mb-2">
                                 <div className="absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full">
                                     <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{index + 1}</span>
                                 </div>
                                 <div className="pl-4 pr-2">
-                                    <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>Rekapitulasi Kekuatan Perwira Satops Dan Satdukorps Kecabangan Armed Bulan Februari PA 2024 Berdasarkan Nyata Pengisian</span>
+                                    <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{item.title}</span>
                                 </div>
                                 <div className="mt-5 pl-4 pr-2 flex justify-end">
                                     <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>
-                                        Dibuat: 28-07-2024
+                                        Dibuat: {dateFormatterV4(item.created_at)}
                                     </span>
                                 </div>
                             </div>

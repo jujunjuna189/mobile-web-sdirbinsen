@@ -1,4 +1,4 @@
-import { bnrBg, icFilter, icInfantry, imgMainBg } from "../../../assets";
+import { bnrBg, icInfantry, imgMainBg } from "../../../assets";
 import { Content, InputSearch, Navbar } from "../../../components";
 import { UseBinmanPetaJabatanContext } from "../../../contexts/binman/BinmanPetaJabatanContext";
 import { RouterName } from "../../../utils";
@@ -28,9 +28,6 @@ const BinmanPetaJabatanPage = () => {
                 <div className="sticky top-0 z-10 bg-black py-2">
                     <div className="flex gap-3 px-3">
                         <InputSearch onChange={(value) => onSearch({ value: value })} placeholder="Cari Satuan..." />
-                        <div className="bg-white px-4 py-2 rounded-lg flex justify-center items-center">
-                            <img src={icFilter} alt="icon" className="w-8" />
-                        </div>
                     </div>
                 </div>
                 <div className="grid grid-cols-2 gap-5 px-3 mt-4 justify-center">

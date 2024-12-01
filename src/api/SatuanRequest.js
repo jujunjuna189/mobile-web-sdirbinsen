@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_SATUAN_GET, API_SATUAN_LAMBANG_GET, API_SATUAN_PEJABAT_DANSAT_GET, API_SATUAN_PRESTASI_GET, API_SATUAN_TRADISI_GET } from "../config/api";
+import { API_KOMPERS_SATJAR_GET, API_SATUAN_GET, API_SATUAN_LAMBANG_GET, API_SATUAN_PEJABAT_DANSAT_GET, API_SATUAN_PRESTASI_GET, API_SATUAN_TRADISI_GET } from "../config/api";
 import { getLocalUser } from "../service/LocalStorage";
 
 export const getSatuanRequest = async ({ filter = "" }) => {
@@ -82,6 +82,20 @@ export const getSatuanPejabatDansatRequest = async ({ filter = '', params = {} }
             },
         });
         return response.data.list_data.satuan;
+    } catch (error) {
+        console.error("Error fetching items:", error);
+    }
+};
+
+export const getSatuanKompersSatjarRequest = async ({ filter = '' }) => {
+    // const user = getLocalUser();
+    try {
+        const response = await axios.get(`${API_KOMPERS_SATJAR_GET}?${filter}`, {
+            headers: {
+                Authorization: `bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczovL2JhY2tlbmQuc2RpcmJpbnNlbi5jb20vYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE2ODk3NDA1OTMsImV4cCI6MTY4OTgyNjk5MywibmJmIjoxNjg5NzQwNTkzLCJqdGkiOiJnQkZIUDY4OXUzNjBqWkFUIiwic3ViIjoiNSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjciLCJ1c2VyIjp7InVzZXJfaWQiOjUsInJvbGVfaWQiOiIxIn19.NmhGNPK-EpJfPUZMxlhl8JUiB2u4_y9K5ozPiM3uxl4`,
+            },
+        });
+        return response.data.list_data.kompers_satjar;
     } catch (error) {
         console.error("Error fetching items:", error);
     }

@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { AuthContextProvider } from './contexts/auth/AuthContext';
 import { LoginContextProvider } from './contexts/auth/LoginContext';
+import { BinmanKompersSatjasListContextProvider } from './contexts/binman/BinmanKompersSatjasContext';
 import { BinmanPersContextProvider } from './contexts/binman/BinmanPersContext';
 import { BinmanPetaJabatanContextProvider } from './contexts/binman/BinmanPetaJabatanContext';
 import { BinmanPetaJabatanListContextProvider } from './contexts/binman/BinmanPetaJabatanListContext';
@@ -99,7 +100,9 @@ function App() {
           </BinmanPetaJabatanListContextProvider>
         } />
         <Route path={RouterName.binmanKompersSatjar} element={
-          <BinmanKompersSatjarPage />
+          <BinmanKompersSatjasListContextProvider>
+            <BinmanKompersSatjarPage />
+          </BinmanKompersSatjasListContextProvider>
         } />
         <Route path={RouterName.binmat} element={
           <BinmatPage />
