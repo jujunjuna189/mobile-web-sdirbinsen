@@ -8,16 +8,31 @@ export const BinmanPersContextProvider = ({ children }) => {
     const navigation = useNavigate();
     const location = useLocation();
     // local state
-    const [personil, setPersonil] = useState();
+    const [filter, setFilter] = useState({});
+    const [personil, setPersonil] = useState({});
 
-    const getPersonil = async ({ filter = "" }) => {
-        await getPersonilRequest({ filter: `sumber_pa=${location?.state?.category}&search=${filter}` }).then((res) => {
+    const getPersonil = async ({ search = "", tmt_1 }) => {
+        setPersonil({});
+        await getPersonilRequest({ filter: `per_page=20&sumber_pa=${location?.state?.category}&tmt_1=${tmt_1 ?? (filter.tmt_1 ?? '')}&search=${search}` }).then((res) => {
             setPersonil(res);
         });
     }
 
-    const onSearch = ({ value }) => {
-        getPersonil({ filter: value });
+    const handleScroll = async (event) => {
+        const { scrollTop, scrollHeight, clientHeight } = event.target;
+        // Cek apakah scroll sudah mentok ke bawah
+        if ((scrollTop + 1) + clientHeight >= scrollHeight && !personil.loading) {
+            setPersonil({ ...personil, loading: true });
+            await getPersonilRequest({ filter: `page=${(personil.current_page ?? 1) + 1}&per_page=20&sumber_pa=${location?.state?.category}&tmt_1=${filter.tmt_1 ?? ''}&search=${filter.search ?? ''}` }).then((res) => {
+                setPersonil({ ...res, data: [...(personil.data ?? []), ...res.data], loading: false });
+            });
+        }
+    };
+
+    const onSearch = ({ search, tmt_1 }) => {
+        getPersonil({ search: search, tmt_1: tmt_1 });
+        search != null && setFilter({ search: search });
+        tmt_1 != null && setFilter({ tmt_1: tmt_1 });
     }
 
     useEffect(() => {
@@ -26,7 +41,7 @@ export const BinmanPersContextProvider = ({ children }) => {
     }, []);
 
     return (
-        <BinmanPersContext.Provider value={{ navigation, location, personil, onSearch }}>
+        <BinmanPersContext.Provider value={{ navigation, location, filter, personil, handleScroll, onSearch }}>
             {children}
         </BinmanPersContext.Provider>
     );
