@@ -28,7 +28,7 @@ const BukuPintarListPage = () => {
                     )}
                     {learning?.data?.map((item, index) => {
                         return (
-                            <div key={index} className="bg-[#4B7D5E] rounded-md px-2 py-2 bg-opacity-60 relative">
+                            <div key={index} className="bg-[#4B7D5E] rounded-md px-2 py-2 bg-opacity-60 relative" onClick={() => window.open(`https://docs.google.com/gview?url=${item.file}`, '_self')}>
                                 <div className="absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full">
                                     <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{index + 1}</span>
                                 </div>
