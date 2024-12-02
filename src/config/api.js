@@ -11,6 +11,8 @@ export const API_SATUAN_TRADISI_GET = `${REACT_APP_API_URL}admin/satuan/tradisi`
 export const API_SATUAN_PRESTASI_GET = `${REACT_APP_API_URL}admin/satuan-prestasi`;
 // Pejabat dansat
 export const API_SATUAN_PEJABAT_DANSAT_GET = `${REACT_APP_API_URL}admin/satuan-jabatan-dansat`;
+// Satuan Purnawirawan
+export const API_SATUAN_PURNAWIRAWAN_GET = `${REACT_APP_API_URL}admin/satuan-purnawirawan`;
 // Peta Jabatan
 export const API_PETA_JABATAN_GET = `${REACT_APP_API_URL}admin/peta-jabatan`;
 // Kompers Satjar

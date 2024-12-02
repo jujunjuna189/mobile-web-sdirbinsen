@@ -66,7 +66,7 @@ const TrakorpsDetailPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Pejabat Dansat</strong>
                         </div>
                     </div>
-                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2">
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.trakorpsDetailDataPurnawirawan, { state: { satuan: { id: satuan.id } } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icSoldier} alt="icon" className="w-[40px] -mb-1" />
                         </div>

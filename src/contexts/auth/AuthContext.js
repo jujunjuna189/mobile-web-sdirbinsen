@@ -22,7 +22,7 @@ export const AuthContextProvider = ({ children }) => {
         }).then((res) => {
             setLocalUser({ ...res });
             // Set initial page
-            var initial = setInitial(res.permission);
+            var initial = setInitial(res?.permission);
             res && navigation(initial);;
         });
     }
