@@ -4,7 +4,7 @@ import { UseBinmanPersContext } from "../../../../contexts/binman/BinmanPersCont
 import FilterPersonilPopup from "../../component/popup/FilterPersonilPopup";
 
 const BinmanPersListPage = () => {
-    const { location, filter, personil, handleScroll, onSearch } = UseBinmanPersContext();
+    const { location, filter, personil, handleScroll, onSearch, onTogglePersonelDetail } = UseBinmanPersContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -55,7 +55,7 @@ const BinmanPersListPage = () => {
                     )}
                     {personil?.data?.map((item, index) => {
                         return (
-                            <div key={index} className="bg-[#4B7D5E] rounded-md px-2 py-2 bg-opacity-60 relative mb-2">
+                            <div key={index} className="bg-[#4B7D5E] rounded-md px-2 py-2 bg-opacity-60 relative mb-2" onClick={() => onTogglePersonelDetail(index)}>
                                 <div className="absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full">
                                     <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{index + 1}</span>
                                 </div>
@@ -71,6 +71,68 @@ const BinmanPersListPage = () => {
                                         </div>
                                     </div>
                                 </div>
+                                {item.isShowDetail && (
+                                    <div className="bg-white border border-black rounded-md p-2">
+                                        <div className="flex gap-2">
+                                            <div className="leading-5">
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Jabatan</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.jabatan ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Pangkat</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.pangkat ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Korps</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.korps ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Sumber PA</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.sumber_pa ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">TMT</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.tmt_1 ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Psi</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.psi ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
                             </div>
                         );
                     })}

@@ -15,6 +15,8 @@ export const API_SATUAN_PEJABAT_DANSAT_GET = `${REACT_APP_API_URL}admin/satuan-j
 export const API_SATUAN_PURNAWIRAWAN_GET = `${REACT_APP_API_URL}admin/satuan-purnawirawan`;
 // Peta Jabatan
 export const API_PETA_JABATAN_GET = `${REACT_APP_API_URL}admin/peta-jabatan`;
+// Peta Jabatan
+export const API_PETA_JABATAN_SUMMARY_GET = `${REACT_APP_API_URL}admin/peta-jabatan/summary`;
 // Kompers Satjar
 export const API_KOMPERS_SATJAR_GET = `${REACT_APP_API_URL}admin/kompers-satjar`;
 // Material

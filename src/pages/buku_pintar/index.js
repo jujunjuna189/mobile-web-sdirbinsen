@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { bnrBg, icBook, icOnlineLesson, imgMainBg } from "../../assets";
+import { bnrBg, icArtillery, icChecked, icDrone, icMeasureDistance, icNote, icOnlineLesson, icRupiah, icStartup, imgMainBg } from "../../assets";
 import { Content, Navbar } from "../../components";
 import { RouterName } from "../../utils";
 
@@ -24,34 +24,74 @@ const BukuPintarPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="grid grid-cols-3 gap-5 px-3 mt-6 justify-center">
-                    <div className="h-[6rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "alutsista" } })}>
+                <div className="grid md:grid-cols-3 grid-cols-2 gap-5 px-3 mt-6 justify-center">
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "alutsista" } })}>
                         <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
-                                <img src={icBook} alt="icon" className="w-[55px] -mb-2" />
+                                <img src={icArtillery} alt="icon" className="w-[55px] -mb-2 object-fill" />
                             </div>
                             <div className="text-center mt-2">
-                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>ALUTSISTA ARMED</strong>
+                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Alutsista Armed</strong>
                             </div>
                         </div>
                     </div>
-                    <div className="h-[6rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "munisi" } })}>
-                        <div className="h-full bg-[#4B7D5E]">
-                            <div className="flex justify-center items-center py-1">
-                                <img src={icBook} alt="icon" className="w-[55px] -mb-2" />
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "munisi" } })}>
+                        <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
+                            <div className="flex justify-center items-center py-1 mt-2">
+                                <img src={icChecked} alt="icon" className="w-[40px] -mb-2" />
                             </div>
                             <div className="text-center mt-2">
-                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>MUNISI</strong>
+                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Tugas {'&'} Tanggung Jawab</strong>
                             </div>
                         </div>
                     </div>
-                    <div className="h-[6rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
                         <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
-                                <img src={icBook} alt="icon" className="w-[55px] -mb-2" />
+                                <img src={icDrone} alt="icon" className="w-[55px] -mb-2" />
                             </div>
                             <div className="text-center mt-2">
-                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>PEJABAT SATUAN</strong>
+                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Hasil Litbang</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                        <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
+                            <div className="flex justify-center items-center py-1 mt-2">
+                                <img src={icRupiah} alt="icon" className="w-[40px] -mb-2" />
+                            </div>
+                            <div className="text-center mt-2">
+                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Prioritas Renbut</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                        <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
+                            <div className="flex justify-center items-center py-1 mt-2">
+                                <img src={icNote} alt="icon" className="w-[40px] -mb-2" />
+                            </div>
+                            <div className="text-center mt-2">
+                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Program TOT {'&'} TOK</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                        <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
+                            <div className="flex justify-center items-center py-1 mt-2">
+                                <img src={icMeasureDistance} alt="icon" className="w-[40px] -mb-2" />
+                            </div>
+                            <div className="text-center mt-2">
+                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Roadmap Siapsat Armed</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                        <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
+                            <div className="flex justify-center items-center py-1 mt-2">
+                                <img src={icStartup} alt="icon" className="w-[40px] -mb-2" />
+                            </div>
+                            <div className="text-center mt-2">
+                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Renbanglarsat Armed</strong>
                             </div>
                         </div>
                     </div>

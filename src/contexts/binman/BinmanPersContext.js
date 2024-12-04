@@ -35,13 +35,22 @@ export const BinmanPersContextProvider = ({ children }) => {
         tmt_1 != null && setFilter({ tmt_1: tmt_1 });
     }
 
+    const onTogglePersonelDetail = (index) => {
+        if (!personil.data[index].isShowDetail) {
+            const indexTrue = personil.data.findIndex((x) => x.isShowDetail === true);
+            indexTrue >= 0 && (personil.data[indexTrue].isShowDetail = false);
+        }
+        personil.data[index].isShowDetail = !personil.data[index]?.isShowDetail;
+        setPersonil({ ...personil });
+    }
+
     useEffect(() => {
         getPersonil({});
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <BinmanPersContext.Provider value={{ navigation, location, filter, personil, handleScroll, onSearch }}>
+        <BinmanPersContext.Provider value={{ navigation, location, filter, personil, handleScroll, onSearch, onTogglePersonelDetail }}>
             {children}
         </BinmanPersContext.Provider>
     );

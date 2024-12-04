@@ -5,7 +5,7 @@ import { calculateDifferenceDate } from "../../../../utils/calculate/CalculateDa
 import { ValidDateConvert } from "../../../../utils/convert/ValidDateConvert";
 
 const BinmanPetaJabatanListPage = () => {
-    const { satuan, petaJabatan, onSearch } = UseBinmanPetaJabatanListContext();
+    const { satuan, petaJabatanSummary, petaJabatan, onSearch } = UseBinmanPetaJabatanListContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -39,13 +39,18 @@ const BinmanPetaJabatanListPage = () => {
                 </div>
                 <div className="flex gap-2 mt-3 px-3">
                     <div className="rounded bg-[#2E8288] p-3 text-center grow">
-                        <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Jabatan Terisi</strong>
+                        <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>{petaJabatanSummary?.filled ?? '-'} Jabatan Terisi</strong>
                     </div>
                     <div className="rounded bg-[#81070A] p-3 text-center grow">
-                        <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Jabatan Kosong</strong>
+                        <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>{petaJabatanSummary?.empty ?? '-'} Jabatan Kosong</strong>
                     </div>
                 </div>
                 <div className="px-3 mt-4 justify-center">
+                    {(Object.keys(petaJabatan?.data ?? {})).length === 0 && (
+                        <div className="bg-[#4B7D5E] rounded-md px-2 py-5 bg-opacity-60 relative mb-2 text-center flex flex-col">
+                            <span className="text-white font-medium text-base">Tidak ada data peta jabatan</span>
+                        </div>
+                    )}
                     {(Object.keys(petaJabatan?.data ?? {}))?.map((item, index) => {
                         return (
                             <>

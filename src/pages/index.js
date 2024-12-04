@@ -8,6 +8,9 @@ import BinmanPetaJabatanListPage from "./binman/peta_jabatan/list";
 import BinmatPage from "./binmat";
 import BinmatListPage from "./binmat/list";
 import BinmatSatuanPage from "./binmat/satuan";
+import BinsiapsatPage from "./binsiapsat";
+import BinsiapsatPembinaanPage from "./binsiapsat/pembinaan";
+import BinsiapsatSatuanPage from "./binsiapsat/satuan";
 import BoardPage from "./board";
 import BukuPintarPage from "./buku_pintar";
 import BukuPintarListPage from "./buku_pintar/list";
@@ -45,6 +48,9 @@ export {
     BinmatPage,
     BinmatSatuanPage,
     BinmatListPage,
+    BinsiapsatPage,
+    BinsiapsatSatuanPage,
+    BinsiapsatPembinaanPage,
     BukuPintarPage,
     BukuPintarListPage,
     BukuPintarPreviewPage,

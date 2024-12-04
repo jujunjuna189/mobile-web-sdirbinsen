@@ -49,7 +49,7 @@ const BoardPage = () => {
                     </div>
                 </div>
                 <div className="flex justify-center gap-5 px-3 mt-6">
-                    <div className="h-[5.5rem] w-[6.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]">
+                    <div className="h-[5.5rem] w-[6.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binsiapsat)}>
                         <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icDataGathering} alt="icon" className="w-[55px] -mb-2" />

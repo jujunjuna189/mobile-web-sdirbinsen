@@ -34,6 +34,12 @@ import icLightningCircle from "./icon/icLightningCircle.png";
 import icExplosive from "./icon/icExplosive.png";
 import icBookMilitary from "./icon/icBookMilitary.png";
 import icBook from "./icon/icBook.png";
+import icChecked from "./icon/icChecked.png";
+import icDrone from "./icon/icDrone.png";
+import icRupiah from "./icon/icRupiah.png";
+import icNote from "./icon/icNote.png";
+import icMeasureDistance from "./icon/icMeasureDistance.png";
+import icStartup from "./icon/icStartup.png";
 import bnrName from "./banner/bannerName.webp";
 import bnrBg from "./banner/bannerBg.webp";
 import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
@@ -76,6 +82,12 @@ export {
     icExplosive,
     icBookMilitary,
     icBook,
+    icChecked,
+    icDrone,
+    icRupiah,
+    icNote,
+    icMeasureDistance,
+    icStartup,
     bnrName,
     bnrBg,
     fnAgencyFbBold,

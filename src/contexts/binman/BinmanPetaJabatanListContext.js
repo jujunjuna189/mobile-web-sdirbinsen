@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { getPetaJabatanRequest } from "../../api/PetaJabatanRequest";
+import { getPetaJabatanRequest, getPetaJabatanSummaryRequest } from "../../api/PetaJabatanRequest";
 import { getSatuanDetailRequest } from "../../api/SatuanRequest";
 
 const BinmanPetaJabatanListContext = createContext();
@@ -10,11 +10,18 @@ export const BinmanPetaJabatanListContextProvider = ({ children }) => {
     const location = useLocation();
     // local state
     const [satuan, setSatuan] = useState({});
+    const [petaJabatanSummary, setPetaJabatanSummary] = useState({});
     const [petaJabatan, setPetaJabatan] = useState({});
 
     const getSatuan = async () => {
         await getSatuanDetailRequest({ id: location.state?.satuan?.id }).then((res) => {
             setSatuan(res);
+        });
+    }
+
+    const getPetaJabatanSummary = async () => {
+        await getPetaJabatanSummaryRequest({ filter: `satuan_id=${location.state?.satuan?.id}` }).then((res) => {
+            setPetaJabatanSummary(res);
         });
     }
 
@@ -30,12 +37,13 @@ export const BinmanPetaJabatanListContextProvider = ({ children }) => {
 
     useEffect(() => {
         getSatuan();
+        getPetaJabatanSummary();
         getPetaJabatan({});
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <BinmanPetaJabatanListContext.Provider value={{ navigation, satuan, petaJabatan, onSearch }}>
+        <BinmanPetaJabatanListContext.Provider value={{ navigation, satuan, petaJabatanSummary, petaJabatan, onSearch }}>
             {children}
         </BinmanPetaJabatanListContext.Provider>
     );
