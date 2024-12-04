@@ -10,32 +10,32 @@ export const BinmanPetaJabatanListContextProvider = ({ children }) => {
     const location = useLocation();
     // local state
     const [satuan, setSatuan] = useState({});
+    const [petaJabatan, setPetaJabatan] = useState({});
 
     const getSatuan = async () => {
         await getSatuanDetailRequest({ id: location.state?.satuan?.id }).then((res) => {
             setSatuan(res);
-            console.log(res);
         });
     }
 
-    const getPetaJabatan = async () => {
-        await getPetaJabatanRequest().then((res) => {
-            console.log(res);
+    const getPetaJabatan = async ({ filter = '' }) => {
+        await getPetaJabatanRequest({ filter: `satuan_id=${location.state?.satuan?.id}&jabatan=${filter}` }).then((res) => {
+            setPetaJabatan(res);
         });
     }
 
     const onSearch = ({ value }) => {
-        getSatuan({ filter: value });
+        getPetaJabatan({ filter: value });
     }
 
     useEffect(() => {
         getSatuan();
-        getPetaJabatan();
+        getPetaJabatan({});
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <BinmanPetaJabatanListContext.Provider value={{ navigation, satuan, onSearch }}>
+        <BinmanPetaJabatanListContext.Provider value={{ navigation, satuan, petaJabatan, onSearch }}>
             {children}
         </BinmanPetaJabatanListContext.Provider>
     );
