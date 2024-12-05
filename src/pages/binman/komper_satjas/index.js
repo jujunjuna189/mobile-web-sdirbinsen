@@ -4,7 +4,7 @@ import { UseBinmanKompersSatjasListContext } from "../../../contexts/binman/Binm
 import { dateFormatterV4 } from "../../../utils";
 
 const BinmanKompersSatjarPage = () => {
-    const { kompers, onSearch } = UseBinmanKompersSatjasListContext();
+    const { part, kompers, onSearch, onChangeTab } = UseBinmanKompersSatjasListContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -24,24 +24,16 @@ const BinmanKompersSatjarPage = () => {
                     </div>
                 </div>
                 <div className="flex gap-4 px-3 mt-4 mb-2">
-                    <div className="grow flex gap-2 items-center bg-[#4B7D5E] rounded py-2 px-2">
-                        <img src={icArmedForces} alt="icon" className="w-[30px] -mb-2" />
-                        <span className="font-bold text-white text-lg" style={{ textShadow: "0px 1px 3px #000000" }}>
-                            Pa
-                        </span>
-                    </div>
-                    <div className="grow flex gap-2 items-center bg-[#4B7D5E] rounded py-2 px-2">
-                        <img src={icArmedForces} alt="icon" className="w-[30px] -mb-2" />
-                        <span className="font-bold text-white text-lg" style={{ textShadow: "0px 1px 3px #000000" }}>
-                            Ba
-                        </span>
-                    </div>
-                    <div className="grow flex gap-2 items-center bg-[#4B7D5E] rounded py-2 px-2">
-                        <img src={icArmedForces} alt="icon" className="w-[30px] -mb-2" />
-                        <span className="font-bold text-white text-lg" style={{ textShadow: "0px 1px 3px #000000" }}>
-                            Ta
-                        </span>
-                    </div>
+                    {part.map((item, index) => {
+                        return (
+                            <div key={index} className={`grow flex gap-2 items-center ${item.isActive ? "bg-[#C7CB26]" : "bg-[#4B7D5E]"} rounded py-2 px-2`} onClick={() => onChangeTab(index)}>
+                                <img src={icArmedForces} alt="icon" className="w-[30px] -mb-2" />
+                                <span className="font-bold text-white text-lg" style={{ textShadow: "0px 1px 3px #000000" }}>
+                                    {item.title}
+                                </span>
+                            </div>
+                        );
+                    })}
                 </div>
                 <div className="sticky top-0 z-10 bg-black py-2">
                     <div className="flex gap-3 px-3">
