@@ -11,7 +11,7 @@ export const BukuPintarListContextProvider = ({ children }) => {
     const [learning, setLearning] = useState({});
 
     const getLearning = async ({ filter = "" }) => {
-        await getLearningRequest({ path: location.state?.path, filter: `search=${filter}` }).then((res) => {
+        await getLearningRequest({ path: location.state?.path, filter: `category=${location.state?.category}&search=${filter}` }).then((res) => {
             setLearning(res);
             console.log(res);
         });

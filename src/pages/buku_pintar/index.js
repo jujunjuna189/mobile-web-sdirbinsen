@@ -25,7 +25,7 @@ const BukuPintarPage = () => {
                     </div>
                 </div>
                 <div className="grid md:grid-cols-3 grid-cols-2 gap-5 px-3 mt-6 justify-center">
-                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "alutsista" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Alutsista Armed", category: "alutsista-armed" } })}>
                         <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icArtillery} alt="icon" className="w-[55px] -mb-2 object-fill" />
@@ -35,7 +35,7 @@ const BukuPintarPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "munisi" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Tugas & Tanggung Jawab", category: "tugas-tanggung-jawab" } })}>
                         <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
                             <div className="flex justify-center items-center py-1 mt-2">
                                 <img src={icChecked} alt="icon" className="w-[40px] -mb-2" />
@@ -45,7 +45,7 @@ const BukuPintarPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Hasil Litbag", category: "hasil-litbag" } })}>
                         <div className="h-full bg-[#4B7D5E]">
                             <div className="flex justify-center items-center py-1">
                                 <img src={icDrone} alt="icon" className="w-[55px] -mb-2" />
@@ -55,7 +55,7 @@ const BukuPintarPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Prioritas Renbut", category: "prioritas-renbut" } })}>
                         <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
                             <div className="flex justify-center items-center py-1 mt-2">
                                 <img src={icRupiah} alt="icon" className="w-[40px] -mb-2" />
@@ -65,7 +65,7 @@ const BukuPintarPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Program TOT & TOK", category: "program-tot-tok" } })}>
                         <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
                             <div className="flex justify-center items-center py-1 mt-2">
                                 <img src={icNote} alt="icon" className="w-[40px] -mb-2" />
@@ -75,7 +75,7 @@ const BukuPintarPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Roadmap Siapsat Armed", category: "roadmap-siapsat-armed" } })}>
                         <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
                             <div className="flex justify-center items-center py-1 mt-2">
                                 <img src={icMeasureDistance} alt="icon" className="w-[40px] -mb-2" />
@@ -85,7 +85,7 @@ const BukuPintarPage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { path: "pejabat-satuan" } })}>
+                    <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Renbanglarsat Armed", category: "renbanglarsat-armed" } })}>
                         <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
                             <div className="flex justify-center items-center py-1 mt-2">
                                 <img src={icStartup} alt="icon" className="w-[40px] -mb-2" />
