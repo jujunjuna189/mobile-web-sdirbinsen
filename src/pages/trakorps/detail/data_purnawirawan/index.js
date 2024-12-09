@@ -1,9 +1,9 @@
 import { Content, Navbar } from "../../../../components";
-import { icMilitaryMan, imgMainBg } from "../../../../assets";
+import { icSoldier, imgMainBg } from "../../../../assets";
 import { UseTrakorpsDetailDataPurnawirawanContext } from "../../../../contexts/trakorps/TrakorpsDetailDataPurnawirawanContext";
 
 const TrakorpsDataPurnawirawanPage = () => {
-    const { satuan } = UseTrakorpsDetailDataPurnawirawanContext();
+    const { satuan, onTogglePersonelDetail } = UseTrakorpsDetailDataPurnawirawanContext();
 
     return (
         <Content>
@@ -15,7 +15,7 @@ const TrakorpsDataPurnawirawanPage = () => {
                 <div className="px-3 mt-1">
                     <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
                         <div className="flex justify-center items-center py-1">
-                            <img src={icMilitaryMan} alt="icon" className="w-[40px] -mb-1" />
+                            <img src={icSoldier} alt="icon" className="w-[40px] -mb-1" />
                         </div>
                         <div className="text-center">
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Purnawirawan</strong>
@@ -23,29 +23,77 @@ const TrakorpsDataPurnawirawanPage = () => {
                     </div>
                 </div>
                 <div className="px-3 mt-4 justify-center">
-                    <div className="bg-white rounded-md min-h-[75vh] p-2">
-                        {satuan?.data?.length === 0 && (
-                            <div className="flex justify-center py-3 flex-col items-center">
-                                <span className="font-semibold">Tidak ada data</span>
-                                <span>Data Purnawirawan Belum Ditambahkan</span>
-                            </div>
-                        )}
-                        {satuan?.data?.map((item, index) => {
-                            return (
-                                <div key={index} className="flex gap-3 border py-1 px-1 rounded-lg mb-2">
-                                    {item.gambar && (
-                                        <div className="h-16 max-h-16 min-h-16 w-16 max-w-16 min-w-16 relative border rounded-lg overflow-hidden mt-1">
-                                            <img src={item.gambar} alt="ImagePrestasi" className="object-cover w-full h-full" />
+                    {satuan?.data?.length === 0 && (
+                        <div className="bg-[#4B7D5E] rounded-md px-2 py-5 bg-opacity-60 relative mb-2 text-center flex flex-col">
+                            <span className="text-white font-medium text-base">Tidak ada data</span>
+                            <small className="text-white font-medium">Data Purnawirawan Belum Ditambahkan</small>
+                        </div>
+                    )}
+                    {satuan?.data?.map((item, index) => {
+                        return (
+                            <div key={index} className="bg-[#4B7D5E] rounded-md px-2 py-2 bg-opacity-60 relative mb-2" onClick={() => onTogglePersonelDetail(index)}>
+                                <div className="absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full">
+                                    <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{index + 1}</span>
+                                </div>
+                                <div className="flex gap-2">
+                                    <div className="">
+                                        <img src={icSoldier} alt="img" width={80} />
+                                    </div>
+                                    <div>
+                                        <span className="text-white font-bold uppercase" style={{ textShadow: "0px 1px 3px #000000" }}>{item.nama}</span>
+                                        <div className="mt-2 flex flex-col">
+                                            <span className="text-white" style={{ textShadow: "0px 1px 3px #000000" }}>Pangkat: {item.pangkat}</span>
+                                            <span className="text-white" style={{ textShadow: "0px 1px 3px #000000" }}>Jabatan: {item.jabatan}</span>
                                         </div>
-                                    )}
-                                    <div className="leading-5">
-                                        <span className="font-semibold text-[14px]">{item.nama}</span>
-                                        <p>{item.deskripsi}</p>
                                     </div>
                                 </div>
-                            );
-                        })}
-                    </div>
+                                {item.isShowDetail && (
+                                    <div className="bg-white border border-black rounded-md p-2">
+                                        <div className="flex gap-2">
+                                            <div className="leading-5">
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Leting</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.leting ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">HP</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.no_hp ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Alamat</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.alamat ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Keterangan</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.deskripsi ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        );
+                    })}
                 </div>
                 <div className="h-10" />
             </div>

@@ -64,7 +64,7 @@ const BinmanPersListPage = () => {
                                         <img src={icPeople} alt="img" width={80} />
                                     </div>
                                     <div>
-                                        <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{item.nama}</span>
+                                        <span className="text-white font-bold uppercase" style={{ textShadow: "0px 1px 3px #000000" }}>{item.nama}</span>
                                         <div className="mt-2 flex flex-col">
                                             <span className="text-white" style={{ textShadow: "0px 1px 3px #000000" }}>NRP: {item.nrp}</span>
                                             <span className="text-white" style={{ textShadow: "0px 1px 3px #000000" }}>Satuan: {item.satuan?.nama}</span>
@@ -73,6 +73,56 @@ const BinmanPersListPage = () => {
                                 </div>
                                 {item.isShowDetail && (
                                     <div className="bg-white border border-black rounded-md p-2">
+                                        <div className="flex gap-2">
+                                            <div className="leading-5">
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Tgl Lahir</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.tanggal_lahir ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Tmp Lahir</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.tempat_lahir ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Agama</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.agama ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Suku Bangsa</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.suku_bangsa ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">Gol Darah</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.golongan_darah ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr className="my-2" />
                                         <div className="flex gap-2">
                                             <div className="leading-5">
                                                 <div className="flex gap-1">
@@ -118,6 +168,15 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                     <div className="grow">
                                                         <span className="font-medium"> {item.tmt_1 ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                        <span className="font-medium">TMT Jab</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.tmt_jab ?? '-'}</span>
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">

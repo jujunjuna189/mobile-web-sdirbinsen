@@ -19,7 +19,7 @@ const BinmanKompersSatjarPage = () => {
                             <img src={icDataGathering} alt="icon" className="w-[100px] -mb-3" />
                         </div>
                         <div className="text-center">
-                            <strong className="text-[#D6D156] font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPERS SATJAS</strong>
+                            <strong className="text-[#D6D156] font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPERS SATJAR</strong>
                         </div>
                     </div>
                 </div>
@@ -46,7 +46,7 @@ const BinmanKompersSatjarPage = () => {
                 <div className="px-3 mt-4 justify-center">
                     {kompers?.data?.length === 0 && (
                         <div className="bg-[#4B7D5E] rounded-md px-2 py-5 bg-opacity-60 relative mb-2 text-center flex flex-col">
-                            <span className="text-white font-medium text-base">Tidak ada data kompers satjas</span>
+                            <span className="text-white font-medium text-base">Tidak ada data kompers satjar</span>
                         </div>
                     )}
                     {kompers?.data?.map((item, index) => {

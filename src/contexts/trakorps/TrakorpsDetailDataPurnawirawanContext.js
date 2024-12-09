@@ -13,8 +13,16 @@ export const TrakorpsDetailDataPurnawirawanContextProvider = ({ children }) => {
     const getDataPurnawirawan = async () => {
         await getSatuanPurnawirawanRequest({ params: { satuan: { id: location.state?.satuan.id } } }).then((res) => {
             setSatuan(res);
-            console.log(res);
         });
+    }
+
+    const onTogglePersonelDetail = (index) => {
+        if (!satuan.data[index].isShowDetail) {
+            const indexTrue = satuan.data.findIndex((x) => x.isShowDetail === true);
+            indexTrue >= 0 && (satuan.data[indexTrue].isShowDetail = false);
+        }
+        satuan.data[index].isShowDetail = !satuan.data[index]?.isShowDetail;
+        setSatuan({ ...satuan });
     }
 
     useEffect(() => {
@@ -23,7 +31,7 @@ export const TrakorpsDetailDataPurnawirawanContextProvider = ({ children }) => {
     }, []);
 
     return (
-        <TrakorpsDetailDataPurnawirawanContext.Provider value={{ navigation, satuan }}>
+        <TrakorpsDetailDataPurnawirawanContext.Provider value={{ navigation, satuan, onTogglePersonelDetail }}>
             {children}
         </TrakorpsDetailDataPurnawirawanContext.Provider>
     );

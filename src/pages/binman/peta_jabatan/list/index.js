@@ -5,7 +5,7 @@ import { calculateDifferenceDate } from "../../../../utils/calculate/CalculateDa
 import { ValidDateConvert } from "../../../../utils/convert/ValidDateConvert";
 
 const BinmanPetaJabatanListPage = () => {
-    const { satuan, petaJabatanSummary, petaJabatan, onSearch } = UseBinmanPetaJabatanListContext();
+    const { satuan, petaJabatanSummary, petaJabatan, onSearch, onFilter } = UseBinmanPetaJabatanListContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -38,10 +38,10 @@ const BinmanPetaJabatanListPage = () => {
                     </div>
                 </div>
                 <div className="flex gap-2 mt-3 px-3">
-                    <div className="rounded bg-[#2E8288] p-3 text-center grow">
+                    <div className="rounded bg-[#2E8288] p-3 text-center grow" onClick={() => onFilter({ field: 'personil_id', value: "filled" })}>
                         <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>{petaJabatanSummary?.filled ?? '-'} Jabatan Terisi</strong>
                     </div>
-                    <div className="rounded bg-[#81070A] p-3 text-center grow">
+                    <div className="rounded bg-[#81070A] p-3 text-center grow" onClick={() => onFilter({ field: 'personil_id', value: "empty" })}>
                         <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>{petaJabatanSummary?.empty ?? '-'} Jabatan Kosong</strong>
                     </div>
                 </div>
@@ -53,15 +53,12 @@ const BinmanPetaJabatanListPage = () => {
                     )}
                     {(Object.keys(petaJabatan?.data ?? {}))?.map((item, index) => {
                         return (
-                            <>
-                                {/* <div className="rounded bg-[#85882e] p-3 text-center grow shadow-all my-2">
-                                    <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>{item}</strong>
-                                </div> */}
+                            <div key={index}>
                                 {petaJabatan?.data[item].map((itemChild, indexChild) => {
                                     return (
-                                        <div key={index} className="bg-[#4B7D5E] rounded-md px-2 py-2 relative mb-2">
-                                            <div className="absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full">
-                                                <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{index + 1}</span>
+                                        <div key={indexChild} className={`${itemChild.personil ? "bg-[#2E8288]" : "bg-[#81070A]"} rounded-md px-2 py-2 relative mb-2`}>
+                                            <div className={`absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full`}>
+                                                <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{indexChild + 1}</span>
                                             </div>
                                             <div className="pl-4 pr-2">
                                                 <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{itemChild.jabatan}</span>
@@ -113,7 +110,7 @@ const BinmanPetaJabatanListPage = () => {
                                         </div>
                                     );
                                 })}
-                            </>
+                            </div>
                         );
                     })}
                 </div>
