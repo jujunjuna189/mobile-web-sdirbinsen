@@ -3,7 +3,7 @@ import { Content, Navbar } from "../../../components";
 import { UseBinsiapsatPembinaanContext } from "../../../contexts/binsiapsat/BinsiapsatPembinaanContext";
 
 const BinsiapsatPembinaanPage = () => {
-    const { satuan, menus, onTogglePersonelDetail } = UseBinsiapsatPembinaanContext();
+    const { satuan, menus, siapsat, onTogglePersonelDetail } = UseBinsiapsatPembinaanContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -32,7 +32,7 @@ const BinsiapsatPembinaanPage = () => {
                 <div className="px-3 mt-4 justify-center flex flex-col gap-2">
                     {menus.map((item, index) => {
                         return (
-                            <div className="bg-[#4B7D5E] rounded-md px-3" onClick={() => onTogglePersonelDetail(index)}>
+                            <div key={index} className="bg-[#4B7D5E] rounded-md px-3" onClick={() => onTogglePersonelDetail(index)}>
                                 <div className="flex gap-2 items-center">
                                     <div className="flex justify-center items-center py-6">
                                         {/* <img src={icDataGathering} alt="icon" className="w-[40px] -mb-1" /> */}
@@ -49,8 +49,18 @@ const BinsiapsatPembinaanPage = () => {
                                 {item.isShowDetail && (
                                     <div className="bg-white border border-black rounded-md p-2 mb-3">
                                         <div className="flex gap-2">
-                                            <div className="leading-5 h-72">
-                                                <span>Comming Soon</span>
+                                            <div className="leading-5 min-h-72">
+                                                {(!siapsat.image && !siapsat.description) && (
+                                                    <span>Tidak ada data</span>
+                                                )}
+                                                {siapsat.image && (
+                                                    <div className="flex justify-center">
+                                                        <img src={siapsat.image} alt={siapsat.nama} className={`aspect-square rounded-lg ${!siapsat.image && "bg-slate-400"}`} />
+                                                    </div>
+                                                )}
+                                                {siapsat.description && (
+                                                    <div style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: siapsat.description }} />
+                                                )}
                                             </div>
                                         </div>
                                     </div>

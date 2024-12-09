@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import { bnrName, icBase, icDataGathering, icInfantry, icOnlineLesson, icTank, icWarning, imgMainBg } from "../../assets";
 import { Content, Navbar } from "../../components";
+import { UseBoardContext } from "../../contexts/board/BoardContext";
 import { RouterName } from "../../utils";
 
 const BoardPage = () => {
-    const navigation = useNavigate();
+    const { navigation, announcement } = UseBoardContext();
 
     return (
         <Content>
@@ -79,15 +79,13 @@ const BoardPage = () => {
                     </div>
                 </div>
                 <div className="px-3 my-3">
-                    <div className="bg-[#D9D9D9] px-4 py-3 rounded-md font-semibold">
-                        Prajurit Gunners memperingati HUT Ke 79 Tentara Nasional Indonesia Tahun 2024
-                    </div>
-                    <div className="bg-[#D9D9D9] px-4 py-3 rounded-md font-semibold mt-2">
-                        Prajurit Gunners memperingati HUT Ke 79 Tentara Nasional Indonesia Tahun 2024
-                    </div>
-                    <div className="bg-[#D9D9D9] px-4 py-3 rounded-md font-semibold mt-2">
-                        Prajurit Gunners memperingati HUT Ke 79 Tentara Nasional Indonesia Tahun 2024
-                    </div>
+                    {announcement?.data?.map((item, index) => {
+                        return (
+                            <div key={index} className="bg-[#D9D9D9] px-4 py-3 rounded-md font-semibold mt-2">
+                                {item.message}
+                            </div>
+                        );
+                    })}
                 </div>
                 <div className="h-20" />
             </div>

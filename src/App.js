@@ -9,6 +9,7 @@ import { BinmatListContextProvider } from './contexts/binmat/BinmatListContext';
 import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanContext';
 import { BinsiapsatPembinaanContextProvider } from './contexts/binsiapsat/BinsiapsatPembinaanContext';
 import { BinsiapsatSatuanContextProvider } from './contexts/binsiapsat/BinsiapsatSatuanContext';
+import { BoardContextProvider } from './contexts/board/BoardContext';
 import { BukuPintarListContextProvider } from './contexts/buku_pintar/BukuPintarContext';
 import { TrakorpsContextProvider } from './contexts/trakorps/TrakorpsContext';
 import { TrakorpsDetailContextProvider } from './contexts/trakorps/TrakorpsDetailContext';
@@ -32,7 +33,9 @@ function App() {
         } />
         {/* Board */}
         <Route path={RouterName.board} element={
-          <BoardPage />
+          <BoardContextProvider>
+            <BoardPage />
+          </BoardContextProvider>
         } />
         {/* Trakorps */}
         <Route path={RouterName.trakorps} element={

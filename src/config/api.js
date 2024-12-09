@@ -29,3 +29,7 @@ export const API_LAPSAT_INDUK_GET = `${REACT_APP_API_URL}searcher/binsiapsat/lap
 export const API_LAPSAT_LAMPIRAN_GET = `${REACT_APP_API_URL}searcher/binsiapsat/lapsat/lampiran`;
 // Learning
 export const API_LEARNING_GET = `${REACT_APP_API_URL}admin/learning`;
+// Announcement
+export const API_ANNOUNCEMENT_GET = `${REACT_APP_API_URL}admin/pengumuman`;
+// Material List
+export const API_SIAPSAT_GET = `${REACT_APP_API_URL}admin/siapsat`;
