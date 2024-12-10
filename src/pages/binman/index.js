@@ -27,34 +27,34 @@ const BinmanPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col gap-5 px-3 mt-6 justify-center">
-                    <div className="h-[5.5rem] w-[6.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binmanPers)}>
-                        <div className=" h-full bg-[#4B7D5E]">
-                            <div className="flex justify-center items-center py-1">
-                                <img src={icArmy} alt="icon" className="w-[55px] -mb-2" />
+                <div className="flex flex-col gap-1 px-3 mt-5 justify-center">
+                    <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanPers)}>
+                        <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
+                            <div className="flex justify-center items-center py-2 px-2">
+                                <img src={icArmy} alt="icon" className="w-[40px] -mb-2" />
                             </div>
                             <div className="text-center">
-                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>DATA PERS</strong>
+                                <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>DATA PERS</strong>
                             </div>
                         </div>
                     </div>
-                    <div className="h-[5.5rem] w-[6.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binmanPetaJabatan)}>
-                        <div className="h-full bg-[#4B7D5E]">
-                            <div className="flex justify-center items-center py-1">
-                                <img src={icInfantry} alt="icon" className="w-[55px] -mb-2" />
+                    <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanPetaJabatan)}>
+                        <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
+                            <div className="flex justify-center items-center py-2 px-2">
+                                <img src={icInfantry} alt="icon" className="w-[40px] -mb-2" />
                             </div>
                             <div className="text-center">
-                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>PETA JABATAN</strong>
+                                <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>PETA JABATAN</strong>
                             </div>
                         </div>
                     </div>
-                    <div className="h-[5.5rem] w-[6.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binmanKompersSatjar)}>
-                        <div className="h-full bg-[#4B7D5E]">
-                            <div className="flex justify-center items-center py-1">
-                                <img src={icDataGathering} alt="icon" className="w-[55px] -mb-2" />
+                    <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanKompersSatjar)}>
+                        <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
+                            <div className="flex justify-center items-center py-2 px-2">
+                                <img src={icDataGathering} alt="icon" className="w-[40px] -mb-2" />
                             </div>
                             <div className="text-center">
-                                <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPER SATJAR</strong>
+                                <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPER SATJAR</strong>
                             </div>
                         </div>
                     </div>

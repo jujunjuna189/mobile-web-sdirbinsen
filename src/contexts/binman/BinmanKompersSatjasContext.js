@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getSatuanKompersSatjarRequest } from "../../api/SatuanRequest";
+import { countColumnsWithKey, getColumnTableGenerator } from "../../service/TableGeneratorExplore";
 
 const BinmanKompersSatjasListContext = createContext();
 
@@ -46,13 +47,45 @@ export const BinmanKompersSatjasListContextProvider = ({ children }) => {
         getKompersSatjas({ filter: { part: part[index].key } });
     }
 
+    const getColumnKey = (item) => {
+        var dataBatch = [];
+
+        getColumnTableGenerator({ data: JSON.parse(item.form)?.mergedCells ?? [], columnKey: 'Satuan' }).forEach((itemChild) => {
+            var field = {};
+            const result = countColumnsWithKey(JSON.parse(item.form)?.cellValues, itemChild.col);
+            result.forEach((itemChildData) => {
+                field[itemChild.content] = JSON.parse(item.form)?.cellValues?.[`${itemChildData}`] ?? '-';
+                dataBatch.push({ ...field });
+            });
+        });
+        getColumnTableGenerator({ data: JSON.parse(item.form)?.mergedCells ?? [], columnKey: 'Rekap' }).filter((_, index) => index !== 0).forEach((itemChild) => {
+            var field = {};
+            const result = countColumnsWithKey(JSON.parse(item.form)?.cellValues, itemChild.col);
+            result.forEach((itemChildData, indexChildData) => {
+                field[itemChild.content] = JSON.parse(item.form)?.cellValues?.[`${itemChildData}`] ?? '-';
+                dataBatch[indexChildData] = { ...dataBatch[indexChildData], ...field };
+            });
+        });
+
+        return dataBatch;
+    }
+
+    const onTogglePersonelDetail = (index) => {
+        if (!kompers.data[index].isShowDetail) {
+            const indexTrue = kompers.data.findIndex((x) => x.isShowDetail === true);
+            indexTrue >= 0 && (kompers.data[indexTrue].isShowDetail = false);
+        }
+        kompers.data[index].isShowDetail = !kompers.data[index]?.isShowDetail;
+        setKompers({ ...kompers });
+    }
+
     useEffect(() => {
         onChangeTab(0);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (
-        <BinmanKompersSatjasListContext.Provider value={{ navigation, part, kompers, onSearch, onChangeTab }}>
+        <BinmanKompersSatjasListContext.Provider value={{ navigation, part, kompers, onSearch, onChangeTab, getColumnKey, onTogglePersonelDetail }}>
             {children}
         </BinmanKompersSatjasListContext.Provider>
     );

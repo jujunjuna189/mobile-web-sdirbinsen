@@ -40,6 +40,9 @@ import icRupiah from "./icon/icRupiah.png";
 import icNote from "./icon/icNote.png";
 import icMeasureDistance from "./icon/icMeasureDistance.png";
 import icStartup from "./icon/icStartup.png";
+import icWorkPlan from "./icon/icWorkPlan.png";
+import icEssay from "./icon/icEssay.png";
+import icProcess from "./icon/icProcess.png";
 import bnrName from "./banner/bannerName.webp";
 import bnrBg from "./banner/bannerBg.webp";
 import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
@@ -88,6 +91,9 @@ export {
     icNote,
     icMeasureDistance,
     icStartup,
+    icWorkPlan,
+    icEssay,
+    icProcess,
     bnrName,
     bnrBg,
     fnAgencyFbBold,

@@ -4,7 +4,7 @@ import { UseBinmanKompersSatjasListContext } from "../../../contexts/binman/Binm
 import { dateFormatterV4 } from "../../../utils";
 
 const BinmanKompersSatjarPage = () => {
-    const { part, kompers, onSearch, onChangeTab } = UseBinmanKompersSatjasListContext();
+    const { part, kompers, onSearch, onChangeTab, getColumnKey, onTogglePersonelDetail } = UseBinmanKompersSatjasListContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -51,7 +51,7 @@ const BinmanKompersSatjarPage = () => {
                     )}
                     {kompers?.data?.map((item, index) => {
                         return (
-                            <div key={index} className="bg-[#4B7D5E] border border-[#B8C558] rounded-md px-2 py-2 bg-opacity-60 relative mb-2">
+                            <div key={index} className="bg-[#4B7D5E] border border-[#B8C558] rounded-md px-2 py-2 bg-opacity-60 relative mb-2" onClick={() => onTogglePersonelDetail(index)}>
                                 <div className="absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full">
                                     <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{index + 1}</span>
                                 </div>
@@ -63,6 +63,39 @@ const BinmanKompersSatjarPage = () => {
                                         Dibuat: {dateFormatterV4(item.created_at)}
                                     </span>
                                 </div>
+                                {item.isShowDetail && (
+                                    <div className="bg-white py-2 px-2 rounded-lg mt-2 flex gap-2 justify-between">
+                                        <table className="w-full">
+                                            <thead>
+                                                <tr>
+                                                    {Object.keys(getColumnKey(item)?.[0] ?? {}).map((itemChild, indexChild) => {
+                                                        return (
+                                                            <th key={indexChild} className={`${indexChild === 0 && 'w-full text-start'} min-w-7`}>{itemChild}</th>
+                                                        );
+                                                    })}
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                {((getColumnKey(item) ?? []).length === 0) && (
+                                                    <tr>
+                                                        <th className="text-center" colSpan={Object.keys(getColumnKey(item)?.[0] ?? {}).length}>Tidak ada data</th>
+                                                    </tr>
+                                                )}
+                                                {(getColumnKey(item) ?? []).map((itemChild, indexChild) => {
+                                                    return (
+                                                        <tr key={indexChild}>
+                                                            {Object.keys(getColumnKey(item)?.[indexChild] ?? {}).map((itemChildData, indexChildData) => {
+                                                                return (
+                                                                    <td key={indexChildData} className={`${indexChildData !== 0 && 'text-center'} border-b`}>{itemChild[itemChildData]}</td>
+                                                                );
+                                                            })}
+                                                        </tr>
+                                                    );
+                                                })}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                )}
                             </div>
                         );
                     })}
