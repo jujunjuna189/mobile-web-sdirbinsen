@@ -8,6 +8,7 @@ import BinmanPetaJabatanListPage from "./binman/peta_jabatan/list";
 import BinmatPage from "./binmat";
 import BinmatListPage from "./binmat/list";
 import BinmatSatuanPage from "./binmat/satuan";
+import BinmatSubPage from "./binmat/sub_index";
 import BinsiapsatPage from "./binsiapsat";
 import BinsiapsatPembinaanPage from "./binsiapsat/pembinaan";
 import BinsiapsatSatuanPage from "./binsiapsat/satuan";
@@ -48,6 +49,7 @@ export {
     BinmatPage,
     BinmatSatuanPage,
     BinmatListPage,
+    BinmatSubPage,
     BinsiapsatPage,
     BinsiapsatSatuanPage,
     BinsiapsatPembinaanPage,

@@ -91,7 +91,7 @@ const BoardPage = () => {
                         </div>
                     )}
                 </div>
-                {announcement.length > 0 && (
+                {announcement?.data?.length > 0 && (
                     <div className="mt-8 flex justify-center">
                         <div className="bg-[#4B7D5E] flex justify-center py-1 pr-3 pl-1 rounded-md">
                             <div className="flex gap-1 items-center">

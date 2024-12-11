@@ -7,6 +7,7 @@ import { BinmanPetaJabatanContextProvider } from './contexts/binman/BinmanPetaJa
 import { BinmanPetaJabatanListContextProvider } from './contexts/binman/BinmanPetaJabatanListContext';
 import { BinmatListContextProvider } from './contexts/binmat/BinmatListContext';
 import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanContext';
+import { BinmatSubContextProvider } from './contexts/binmat/BinmatSubContext';
 import { BinsiapsatPembinaanContextProvider } from './contexts/binsiapsat/BinsiapsatPembinaanContext';
 import { BinsiapsatSatuanContextProvider } from './contexts/binsiapsat/BinsiapsatSatuanContext';
 import { BoardContextProvider } from './contexts/board/BoardContext';
@@ -18,7 +19,7 @@ import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/T
 import { TrakorpsDetailDataPurnawirawanContextProvider } from './contexts/trakorps/TrakorpsDetailDataPurnawirawanContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinmatSubPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -115,6 +116,7 @@ function App() {
             <BinmanKompersSatjarPage />
           </BinmanKompersSatjasListContextProvider>
         } />
+        {/* Binmat */}
         <Route path={RouterName.binmat} element={
           <BinmatPage />
         } />
@@ -122,6 +124,11 @@ function App() {
           <BinmatSatuanContextProvider>
             <BinmatSatuanPage />
           </BinmatSatuanContextProvider>
+        } />
+        <Route path={RouterName.binmatSub} element={
+          <BinmatSubContextProvider>
+            <BinmatSubPage />
+          </BinmatSubContextProvider>
         } />
         <Route path={RouterName.binmatList} element={
           <BinmatListContextProvider>

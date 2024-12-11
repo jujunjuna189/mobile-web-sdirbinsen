@@ -20,6 +20,7 @@ export const RouterName = {
     binmanKompersSatjar: "/binman-kompers-satjar",
     // Binmat
     binmat: "/binmat",
+    binmatSub: "/binmat-sub",
     binmatSatuan: "/binmat-satuan",
     binmatList: "/binmat-list",
     // Binsiapsat

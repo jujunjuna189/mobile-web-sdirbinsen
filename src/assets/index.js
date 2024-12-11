@@ -43,6 +43,12 @@ import icStartup from "./icon/icStartup.png";
 import icWorkPlan from "./icon/icWorkPlan.png";
 import icEssay from "./icon/icEssay.png";
 import icProcess from "./icon/icProcess.png";
+import icAbstract from "./icon/icAbstract.png";
+import icParachute from "./icon/icParachute.png";
+import icBackpack from "./icon/icBackpack.png";
+import icRadioTransmitter from "./icon/icRadioTransmitter.png";
+import icChess from "./icon/icChess.png";
+import icCctv from "./icon/icCctv.png";
 import bnrName from "./banner/bannerName.webp";
 import bnrBg from "./banner/bannerBg.webp";
 import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
@@ -94,6 +100,12 @@ export {
     icWorkPlan,
     icEssay,
     icProcess,
+    icAbstract,
+    icParachute,
+    icBackpack,
+    icRadioTransmitter,
+    icChess,
+    icCctv,
     bnrName,
     bnrBg,
     fnAgencyFbBold,

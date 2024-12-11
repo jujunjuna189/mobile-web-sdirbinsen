@@ -1,5 +1,5 @@
 import { Content, Navbar } from "../../../../components";
-import { icMilitary, imgMainBg } from "../../../../assets";
+import { icExperts, imgMainBg } from "../../../../assets";
 import { UseTrakorpsDetailDataPrestasiContext } from "../../../../contexts/trakorps/TrakorpsDetailDataPrestasiContext";
 
 const TrakorpsDataPrestasiPage = () => {
@@ -15,10 +15,10 @@ const TrakorpsDataPrestasiPage = () => {
                 <div className="px-3 mt-1">
                     <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
                         <div className="flex justify-center items-center py-1">
-                            <img src={icMilitary} alt="icon" className="w-[40px] -mb-1" />
+                            <img src={icExperts} alt="icon" className="w-[40px] -mb-1" />
                         </div>
                         <div className="text-center">
-                            <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Lambang Satuan</strong>
+                            <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Prestasi</strong>
                         </div>
                     </div>
                 </div>

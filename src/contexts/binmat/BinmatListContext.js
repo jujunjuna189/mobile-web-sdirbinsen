@@ -12,18 +12,17 @@ export const BinmatListContextProvider = ({ children }) => {
     const [materiel, setMateriel] = useState({});
 
     const getMateriel = async ({ filter = "" }) => {
-        await getMaterialRequest({ filter: `search=${filter}&kategori=${ConverUrl(location.state?.title)}&satuan_id=${location.state?.satuan?.id}` }).then((res) => {
+        await getMaterialRequest({ filter: `search=${filter}&kategori=${ConverUrl(location.state?.category?.key)}&jenis=${ConverUrl(location.state?.type?.key)}&satuan_id=${location.state?.satuan?.id}` }).then((res) => {
             setMateriel(res);
-            console.log(res);
         });
     }
 
     const onSearch = ({ value }) => {
-        console.log(value);
         getMateriel({ filter: value });
     }
 
     useEffect(() => {
+        console.log(location);
         getMateriel({});
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

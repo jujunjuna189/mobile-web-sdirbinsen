@@ -14,7 +14,7 @@ const BinmatListPage = () => {
                 <Navbar />
                 <div className="sticky top-0 z-10 bg-black pb-2">
                     <div className="flex gap-3 mt-3 px-3">
-                        <InputSearch onChange={(value) => onSearch({ value: value })} placeholder={`Cari ${location.state?.title}...`} />
+                        <InputSearch onChange={(value) => onSearch({ value: value })} placeholder={`Cari ${location.state?.category?.title}...`} />
                         <div className="bg-white px-4 py-2 rounded-lg flex justify-center items-center">
                             <img src={icFilter} alt="icon" className="w-8" />
                         </div>
@@ -34,15 +34,15 @@ const BinmatListPage = () => {
                                 </div>
                                 <div className="flex justify-between pl-5">
                                     <div className="leading-5">
-                                        <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{item.jenis}</span>
+                                        <span className="text-white font-bold uppercase" style={{ textShadow: "0px 1px 3px #000000" }}>{item.nama}</span>
                                         <div className="mt-2 text-white text-[14px]">
                                             <div className="flex gap-1">
                                                 <div className="w-16 flex justify-between">
-                                                    <span className="font-medium">No Reg</span>
+                                                    <span className="font-medium">Satuan</span>
                                                     <span className="font-medium">:</span>
                                                 </div>
                                                 <div className="grow">
-                                                    <span className="font-medium">{item.no_reg}</span>
+                                                    <span className="font-medium">{item.satuan?.nama ?? '-'}</span>
                                                 </div>
                                             </div>
                                             <div className="flex gap-1">
@@ -56,22 +56,55 @@ const BinmatListPage = () => {
                                             </div>
                                             <div className="flex gap-1">
                                                 <div className="w-16 flex justify-between">
-                                                    <span className="font-medium">Kondisi</span>
+                                                    <span className="font-medium">Komponen</span>
                                                     <span className="font-medium">:</span>
                                                 </div>
                                                 <div className="grow">
-                                                    <span className="font-medium">{item.kondisi}</span>
+                                                    <span className="font-medium">{item.jenis}</span>
+                                                </div>
+                                            </div>
+                                            {["taktik", "pengamanan"].includes(location.state?.type?.key) !== true && (
+                                                <>
+                                                    <div className="flex gap-1">
+                                                        <div className="w-16 flex justify-between">
+                                                            <span className="font-medium">Kondisi</span>
+                                                            <span className="font-medium">:</span>
+                                                        </div>
+                                                        <div className="grow">
+                                                            <span className="font-medium">{item.kondisi}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex gap-1">
+                                                        <div className="w-16 flex justify-between">
+                                                            <span className="font-medium">Jumlah</span>
+                                                            <span className="font-medium">:</span>
+                                                        </div>
+                                                        <div className="grow">
+                                                            <span className="font-medium">{item.jumlah}</span>
+                                                        </div>
+                                                    </div>
+                                                </>
+                                            )}
+                                            <div className="flex gap-1">
+                                                <div className="w-16 flex justify-between">
+                                                    <span className="font-medium">Keterangan</span>
+                                                    <span className="font-medium">:</span>
+                                                </div>
+                                                <div className="grow">
+                                                    <span className="font-medium">{item.keterangan}</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="bg-gray-300 rounded-lg overflow-hidden w-[100px] h-[80px] flex justify-center items-center">
-                                        {item.file ? (
-                                            <img src={item.file} alt="gambar" className="w-full h-full" />
-                                        ) : (
-                                            <label>Tidak ada gambar</label>
-                                        )}
-                                    </div>
+                                    {["taktik", "pengamanan"].includes(location.state?.type?.key) !== true && (
+                                        <div className="bg-gray-300 rounded-lg overflow-hidden w-[100px] h-[80px] flex justify-center items-center">
+                                            {item.file ? (
+                                                <img src={item.file} alt="gambar" className="w-full h-full" />
+                                            ) : (
+                                                <label>Tidak ada gambar</label>
+                                            )}
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         )

@@ -17,10 +17,10 @@ const BinmatSatuanPage = () => {
                     <img src={bnrBg} alt="Banner gunner smart application" />
                     <div className="absolute pb-2">
                         <div className="flex justify-center items-center pt-1">
-                            <img src={location.state?.icon} alt="icon" className="w-[100px] -mb-3" />
+                            <img src={location.state?.category?.icon} alt="icon" className="w-[100px] -mb-3" />
                         </div>
                         <div className="text-center">
-                            <strong className="text-[#D6D156] font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>{location.state?.title}</strong>
+                            <strong className="text-[#D6D156] font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>{location.state?.category?.title}</strong>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ const BinmatSatuanPage = () => {
                 <div className="grid grid-cols-2 gap-5 px-3 mt-4 justify-center">
                     {satuan?.data?.map((item, index) => {
                         return (
-                            <div key={index} className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binmatList, { state: { ...location?.state, satuan: { id: item.id } } })}>
+                            <div key={index} className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binmatSub, { state: { ...location?.state, satuan: { id: item.id } } })}>
                                 <div className="h-full bg-[#4B7D5E]">
                                     <div className="flex justify-center items-center py-1">
                                         <img src={item.logo} alt="icon" className="w-[50px] max-w-[50px] h-[55px] -mb-2" />
