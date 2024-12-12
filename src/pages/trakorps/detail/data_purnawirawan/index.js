@@ -43,7 +43,10 @@ const TrakorpsDataPurnawirawanPage = () => {
                                         <span className="text-white font-bold uppercase" style={{ textShadow: "0px 1px 3px #000000" }}>{item.nama}</span>
                                         <div className="mt-2 flex flex-col">
                                             <span className="text-white" style={{ textShadow: "0px 1px 3px #000000" }}>Pangkat: {item.pangkat}</span>
-                                            <span className="text-white" style={{ textShadow: "0px 1px 3px #000000" }}>Jabatan: {item.jabatan}</span>
+                                            <div className="flex gap-1 items-start justify-start">
+                                                <div className="text-white" style={{ textShadow: "0px 1px 3px #000000" }}>Jabatan:</div>
+                                                <div className="grow font-medium text-white leading-4 mt-1" style={{ display: 'flex', whiteSpace: 'pre-wrap', textShadow: "0px 1px 3px #000000" }} dangerouslySetInnerHTML={{ __html: item.jabatan }} />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -74,9 +77,7 @@ const TrakorpsDataPurnawirawanPage = () => {
                                                         <span className="font-medium">Alamat</span>
                                                         <span>:</span>
                                                     </div>
-                                                    <div className="grow">
-                                                        <span className="font-medium"> {item.alamat ?? '-'}</span>
-                                                    </div>
+                                                    <div className="grow font-medium" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: item.alamat }} />
                                                 </div>
                                                 <div className="flex gap-1">
                                                     <div className="w-16 max-w-16 min-w-16 flex justify-between">
