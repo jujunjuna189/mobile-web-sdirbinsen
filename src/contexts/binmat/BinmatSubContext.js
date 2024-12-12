@@ -92,14 +92,14 @@ export const BinmatSubContextProvider = ({ children }) => {
             "mkb": [
                 {
                     icon: icBrain,
-                    title: "New Bp",
-                    key: 'new-bp',
+                    title: "Munisi Bp",
+                    key: 'munisi-bp',
                     isActive: false,
                 },
                 {
                     icon: icBrain,
-                    title: "New Operational Latihan",
-                    key: 'new-operational-latihan',
+                    title: "Munisi Operational Latihan",
+                    key: 'munisi-operational-latihan',
                     isActive: false,
                 },
             ],
