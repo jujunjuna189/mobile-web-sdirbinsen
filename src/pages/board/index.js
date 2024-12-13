@@ -1,4 +1,4 @@
-import { bnrName, icBase, icDataGathering, icInfantry, icOnlineLesson, icProcess, icTank, icWarning, imgMainBg } from "../../assets";
+import { bnrName, icBase, icDataGathering, icInfantry, icMateriel, icOnlineLesson, icProcess, icWarning, imgMainBg } from "../../assets";
 import { Content, Navbar } from "../../components";
 import { UseBoardContext } from "../../contexts/board/BoardContext";
 import { getLocalUser } from "../../service/LocalStorage";
@@ -46,7 +46,7 @@ const BoardPage = () => {
                         <div className="h-[5.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binmat)}>
                             <div className="h-full bg-[#4B7D5E]">
                                 <div className="flex justify-center items-center py-1">
-                                    <img src={icTank} alt="icon" className="w-[55px] -mb-2" />
+                                    <img src={icMateriel} alt="icon" className="w-[60px] -mb-1" />
                                 </div>
                                 <div className="text-center">
                                     <strong className="text-[#D6D156] font-black" style={{ textShadow: "0px 1px 3px #000000" }}>BINMAT</strong>

@@ -31,6 +31,28 @@ const BinsiapsatPembinaanPage = () => {
                 </div>
                 <div className="px-3 mt-4 justify-center flex flex-col gap-2">
                     {menus.map((item, index) => {
+                        if (item.with === 'design') return (
+                            <div key={index} className="flex justify-center my-5 mt-16" onClick={() => onTogglePersonelDetail(index)}>
+                                <div className="bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-md p-1">
+                                    <div className="bg-[#4B7D5E]  px-16 pt-5 pb-2 rounded-md">
+                                        <div className="flex justify-center">
+                                            <div className="p-1 bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-full w-20 h-20 min-w-20 max-w-20 -mt-16">
+                                                <div className="w-full h-full rounded-full flex justify-center items-center bg-[#4B7D5E]">
+                                                    <span className="text-white font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>
+                                                        {siapsat.description ?? '-'}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="flex justify-center mt-1">
+                                            <div className="text-center">
+                                                <strong className="text-white font-black text-lg" style={{ textShadow: "0px 1px 3px #000000" }}>{item.title}</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        );
                         return (
                             <div key={index} className="bg-[#4B7D5E] rounded-md px-3" onClick={() => onTogglePersonelDetail(index)}>
                                 <div className="flex gap-2 items-center">

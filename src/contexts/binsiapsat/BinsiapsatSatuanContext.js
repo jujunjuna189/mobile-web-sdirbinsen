@@ -19,7 +19,6 @@ export const BinsiapsatSatuanContextProvider = ({ children }) => {
     }
 
     const onSearch = ({ value }) => {
-        console.log(value);
         getSatuan({ filter: value });
     }
 

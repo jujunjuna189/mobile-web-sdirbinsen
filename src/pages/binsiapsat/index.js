@@ -40,7 +40,7 @@ const BinsiapsatPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data EKKO</strong>
                         </div>
                     </div>
-                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binsiapsatSatuan, { state: { category: "satgas" } })}>
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binsiapsatSatgasMenus, { state: { category: "satgas" } })}>
                         <div className="flex justify-center items-center py-2">
                             <img src={icWorkPlan} alt="icon" className="w-[30px] -mb-1" />
                         </div>

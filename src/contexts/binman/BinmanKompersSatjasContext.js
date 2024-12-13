@@ -50,14 +50,8 @@ export const BinmanKompersSatjasListContextProvider = ({ children }) => {
     const getColumnKey = (item) => {
         var dataBatch = [];
 
-        getColumnTableGenerator({ data: JSON.parse(item.form)?.mergedCells ?? [], columnKey: 'Satuan' }).forEach((itemChild) => {
-            var field = {};
-            const result = countColumnsWithKey(JSON.parse(item.form)?.cellValues, itemChild.col);
-            result.forEach((itemChildData) => {
-                field[itemChild.content] = JSON.parse(item.form)?.cellValues?.[`${itemChildData}`] ?? '-';
-                dataBatch.push({ ...field });
-            });
-        });
+        console.log(JSON.parse(item.form) ?? {});
+        console.log(getColumnTableGenerator({ data: JSON.parse(item.form) ?? {}, keyword: 'Rekap' }));
         getColumnTableGenerator({ data: JSON.parse(item.form)?.mergedCells ?? [], columnKey: 'Rekap' }).filter((_, index) => index !== 0).forEach((itemChild) => {
             var field = {};
             const result = countColumnsWithKey(JSON.parse(item.form)?.cellValues, itemChild.col);

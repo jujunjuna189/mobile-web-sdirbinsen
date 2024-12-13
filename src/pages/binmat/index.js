@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { bnrBg, icAmmo, icBrain, icManagement, icSettings, icTank, imgMainBg } from "../../assets";
+import { bnrBg, icAmmo, icBrain, icManagement, icMateriel, icSettings, imgMainBg } from "../../assets";
 import { Content, Navbar } from "../../components";
 import { RouterName } from "../../utils";
 
@@ -16,7 +16,7 @@ const BinmatPage = () => {
                     <img src={bnrBg} alt="Banner gunner smart application" />
                     <div className="absolute pb-2">
                         <div className="flex justify-center items-center pt-1">
-                            <img src={icTank} alt="icon" className="w-[100px] -mb-3" />
+                            <img src={icMateriel} alt="icon" className="w-[100px]" />
                         </div>
                         <div className="text-center">
                             <strong className="text-[#D6D156] font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>BINMAT</strong>

@@ -49,6 +49,10 @@ import icBackpack from "./icon/icBackpack.png";
 import icRadioTransmitter from "./icon/icRadioTransmitter.png";
 import icChess from "./icon/icChess.png";
 import icCctv from "./icon/icCctv.png";
+import icMateriel from "./icon/icMateriel.png";
+import icContinuous from "./icon/icContinuous.png";
+import icHourglass from "./icon/icHourglass.png";
+import icStickyNote from "./icon/icStickyNote.png";
 import bnrName from "./banner/bannerName.webp";
 import bnrBg from "./banner/bannerBg.webp";
 import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
@@ -106,6 +110,10 @@ export {
     icRadioTransmitter,
     icChess,
     icCctv,
+    icMateriel,
+    icContinuous,
+    icHourglass,
+    icStickyNote,
     bnrName,
     bnrBg,
     fnAgencyFbBold,
