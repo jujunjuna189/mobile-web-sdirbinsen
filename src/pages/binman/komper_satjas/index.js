@@ -68,7 +68,7 @@ const BinmanKompersSatjarPage = () => {
                                         <table className="w-full">
                                             <thead>
                                                 <tr>
-                                                    {Object.keys(getColumnKey(item)?.[0] ?? {}).map((itemChild, indexChild) => {
+                                                    {getColumnKey(item)?.field?.map((itemChild, indexChild) => {
                                                         return (
                                                             <th key={indexChild} className={`${indexChild === 0 && 'w-full text-start'} min-w-7`}>{itemChild}</th>
                                                         );
@@ -76,17 +76,17 @@ const BinmanKompersSatjarPage = () => {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {((getColumnKey(item) ?? []).length === 0) && (
+                                                {(Object.keys(getColumnKey(item)?.value ?? {})?.length === 0) && (
                                                     <tr>
-                                                        <th className="text-center" colSpan={Object.keys(getColumnKey(item)?.[0] ?? {}).length}>Tidak ada data</th>
+                                                        <th className="text-center" colSpan={getColumnKey(item)?.field?.length}>Tidak ada data</th>
                                                     </tr>
                                                 )}
-                                                {(getColumnKey(item) ?? []).map((itemChild, indexChild) => {
+                                                {Object.keys(getColumnKey(item)?.value ?? {}).map((itemChild, indexChild) => {
                                                     return (
                                                         <tr key={indexChild}>
-                                                            {Object.keys(getColumnKey(item)?.[indexChild] ?? {}).map((itemChildData, indexChildData) => {
+                                                            {(getColumnKey(item)?.value?.[itemChild] ?? []).map((itemChildData, indexChildData) => {
                                                                 return (
-                                                                    <td key={indexChildData} className={`${indexChildData !== 0 && 'text-center'} border-b`}>{itemChild[itemChildData]}</td>
+                                                                    <td key={indexChildData} className={`${indexChildData !== 0 && 'text-center'} border-b`}>{JSON.parse(item.form)?.cellValues?.[itemChildData]}</td>
                                                                 );
                                                             })}
                                                         </tr>

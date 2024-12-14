@@ -1,7 +1,6 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getSatuanKompersSatjarRequest } from "../../api/SatuanRequest";
-import { countColumnsWithKey, getColumnTableGenerator } from "../../service/TableGeneratorExplore";
 
 const BinmanKompersSatjasListContext = createContext();
 
@@ -50,16 +49,33 @@ export const BinmanKompersSatjasListContextProvider = ({ children }) => {
     const getColumnKey = (item) => {
         var dataBatch = [];
 
-        console.log(JSON.parse(item.form) ?? {});
-        console.log(getColumnTableGenerator({ data: JSON.parse(item.form) ?? {}, keyword: 'Rekap' }));
-        getColumnTableGenerator({ data: JSON.parse(item.form)?.mergedCells ?? [], columnKey: 'Rekap' }).filter((_, index) => index !== 0).forEach((itemChild) => {
-            var field = {};
-            const result = countColumnsWithKey(JSON.parse(item.form)?.cellValues, itemChild.col);
-            result.forEach((itemChildData, indexChildData) => {
-                field[itemChild.content] = JSON.parse(item.form)?.cellValues?.[`${itemChildData}`] ?? '-';
-                dataBatch[indexChildData] = { ...dataBatch[indexChildData], ...field };
+        var fieldData = [];
+        var valueData = [];
+
+        var data = JSON.parse(item.form);
+        Object.keys((data?.cellPins ?? {}))?.forEach((item) => {
+            const keys = Object.keys(data.cellValues).filter(key => {
+                // eslint-disable-next-line no-unused-vars
+                const [_, col] = key.split('-'); // Pisahkan berdasarkan tanda "-"
+                return Number(col) === Number(item); // Cek jika kolom sama
             });
+            valueData.push(keys);
+            fieldData.push(data?.cellPins[item].columnName);
         });
+
+        var values = {};
+        valueData.forEach((item, index) => {
+            for (var i = 0; i < valueData[index].length; i++) {
+                values = { ...values, [i]: [...(values[i] ?? []), valueData[index][i]] };
+            }
+        });
+
+        dataBatch = {
+            field: fieldData,
+            value: values,
+        };
+
+        console.log(dataBatch);
 
         return dataBatch;
     }
