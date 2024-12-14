@@ -53,11 +53,13 @@ export const BinmanKompersSatjasListContextProvider = ({ children }) => {
         var valueData = [];
 
         var data = JSON.parse(item.form);
+        console.log(data);
         Object.keys((data?.cellPins ?? {}))?.forEach((item) => {
+            console.log(item);
             const keys = Object.keys(data.cellValues).filter(key => {
                 // eslint-disable-next-line no-unused-vars
-                const [_, col] = key.split('-'); // Pisahkan berdasarkan tanda "-"
-                return Number(col) === Number(item); // Cek jika kolom sama
+                const [row, col] = key.split('-'); // Pisahkan berdasarkan tanda "-"
+                return Number(col) === Number(item) && Number(row) !== Number(0); // Cek jika kolom sama
             });
             valueData.push(keys);
             fieldData.push(data?.cellPins[item].columnName);
