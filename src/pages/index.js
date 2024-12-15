@@ -12,6 +12,7 @@ import BinmatSubPage from "./binmat/sub_index";
 import BinsiapsatPage from "./binsiapsat";
 import BinsiapsatPembinaanPage from "./binsiapsat/pembinaan";
 import BinsiapsatSatgasMenusPage from "./binsiapsat/satgas_menus";
+import BinsiapsatSatgasPreviewPage from "./binsiapsat/satgas_preview";
 import BinsiapsatSatgasSatuanPage from "./binsiapsat/satgas_satuan";
 import BinsiapsatSatuanPage from "./binsiapsat/satuan";
 import BoardPage from "./board";
@@ -60,4 +61,5 @@ export {
     BukuPintarPage,
     BukuPintarListPage,
     BukuPintarPreviewPage,
+    BinsiapsatSatgasPreviewPage,
 }

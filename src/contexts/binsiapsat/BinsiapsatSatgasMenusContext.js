@@ -17,25 +17,22 @@ export const BinsiapsatSatgasMenusContextProvider = ({ children }) => {
                 {
                     icon: icStickyNote,
                     title: 'Data Satgas Saat Ini',
-                    isShowDetail: false,
-                    onClick: () => { },
+                    onClick: () => navigation(RouterName.binsiapsatSatgasPreview, { state: { category: { icon: icStickyNote, title: "Data Satgas Saat Ini" } } })
                 },
                 {
                     icon: icContinuous,
                     title: 'Rotasi Satgas',
-                    router: "",
-                    onClick: () => { },
+                    onClick: () => navigation(RouterName.binsiapsatSatgasPreview, { state: { category: { icon: icContinuous, title: "Rotasi Satgas" } } })
                 },
                 {
                     icon: icHourglass,
                     title: 'Data Riwayat Satgas',
-                    isShowDetail: false,
-                    onClick: () => navigation(RouterName.binsiapsatSatgasSatuan, { state: { category: { icon: icHourglass, title: "Data Riwayat Satgas" } } })
+                    onClick: () => navigation(RouterName.binsiapsatSatgasSatuan, { state: { category: { icon: icHourglass, title: "Riwayat Satgas" } } })
                 },
             ],
         };
 
-        setMenus([...menus[location.state?.category]]);
+        setMenus([...menus[location.state?.category?.key]]);
     }
 
     useEffect(() => {

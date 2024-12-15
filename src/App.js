@@ -10,6 +10,7 @@ import { BinmatSatuanContextProvider } from './contexts/binmat/BinmatSatuanConte
 import { BinmatSubContextProvider } from './contexts/binmat/BinmatSubContext';
 import { BinsiapsatPembinaanContextProvider } from './contexts/binsiapsat/BinsiapsatPembinaanContext';
 import { BinsiapsatSatgasMenusContextProvider } from './contexts/binsiapsat/BinsiapsatSatgasMenusContext';
+import { BinsiapsatSatgasPreviewContextProvider } from './contexts/binsiapsat/BinsiapsatSatgasPreviewContext';
 import { BinsiapsatSatuanContextProvider } from './contexts/binsiapsat/BinsiapsatSatuanContext';
 import { BoardContextProvider } from './contexts/board/BoardContext';
 import { BukuPintarListContextProvider } from './contexts/buku_pintar/BukuPintarContext';
@@ -20,7 +21,7 @@ import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/T
 import { TrakorpsDetailDataPurnawirawanContextProvider } from './contexts/trakorps/TrakorpsDetailDataPurnawirawanContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinmatSubPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatgasMenusPage, BinsiapsatSatgasSatuanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinmatSubPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatgasMenusPage, BinsiapsatSatgasPreviewPage, BinsiapsatSatgasSatuanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -159,6 +160,11 @@ function App() {
           <BinsiapsatSatuanContextProvider>
             <BinsiapsatSatgasSatuanPage />
           </BinsiapsatSatuanContextProvider>
+        } />
+        <Route path={RouterName.binsiapsatSatgasPreview} element={
+          <BinsiapsatSatgasPreviewContextProvider>
+            <BinsiapsatSatgasPreviewPage />
+          </BinsiapsatSatgasPreviewContextProvider>
         } />
         {/* Buku Pintar */}
         <Route path={RouterName.bukuPintar} element={

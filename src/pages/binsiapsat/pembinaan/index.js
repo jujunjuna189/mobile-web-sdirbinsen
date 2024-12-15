@@ -39,7 +39,7 @@ const BinsiapsatPembinaanPage = () => {
                                             <div className="p-1 bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-full w-20 h-20 min-w-20 max-w-20 -mt-16">
                                                 <div className="w-full h-full rounded-full flex justify-center items-center bg-[#4B7D5E]">
                                                     <span className="text-white font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>
-                                                        {siapsat.description ?? '-'}
+                                                        {siapsat?.[item.title]?.description ?? '-'}
                                                     </span>
                                                 </div>
                                             </div>
@@ -72,16 +72,16 @@ const BinsiapsatPembinaanPage = () => {
                                     <div className="bg-white border border-black rounded-md p-2 mb-3">
                                         <div className="flex gap-2">
                                             <div className="leading-5 min-h-72">
-                                                {(!siapsat.image && !siapsat.description) && (
+                                                {(!siapsat?.[item.title]?.image && !siapsat?.[item.title]?.description) && (
                                                     <span>Tidak ada data</span>
                                                 )}
-                                                {siapsat.image && (
+                                                {siapsat?.[item.title]?.image && (
                                                     <div className="flex justify-center">
-                                                        <img src={siapsat.image} alt={siapsat.nama} className={`aspect-square rounded-lg ${!siapsat.image && "bg-slate-400"}`} />
+                                                        <img src={siapsat?.[item.title]?.image} alt={siapsat?.[item.title]?.nama} className={`aspect-square rounded-lg ${!siapsat?.[item.title]?.image && "bg-slate-400"}`} />
                                                     </div>
                                                 )}
-                                                {siapsat.description && (
-                                                    <div style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: siapsat.description }} />
+                                                {siapsat?.[item.title]?.description && (
+                                                    <div style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: siapsat?.[item.title]?.description }} />
                                                 )}
                                             </div>
                                         </div>

@@ -1,4 +1,4 @@
-import { icWorldWar, imgMainBg } from "../../../../assets";
+import { icMarchingBand, imgMainBg } from "../../../../assets";
 import { AudioPlayer, Content, Navbar } from "../../../../components";
 import { UseTrakorpsDetailContext } from "../../../../contexts/trakorps/TrakorpsDetailContext";
 
@@ -15,10 +15,10 @@ const TrakorpsHymnePage = () => {
                 <div className="px-3 mt-1">
                     <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
                         <div className="flex justify-center items-center py-1">
-                            <img src={icWorldWar} alt="icon" className="w-[40px] -mb-1" />
+                            <img src={icMarchingBand} alt="icon" className="w-[40px] -mb-1" />
                         </div>
                         <div className="text-center">
-                            <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Sejarah</strong>
+                            <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Hymne</strong>
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@ const TrakorpsHymnePage = () => {
                                 <span>Lirik Hymne Belum Ditambahkan</span>
                             </div>
                         )}
-                        <div className="mt-3" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: satuan?.hymne }} />
+                        <div className="mt-3" dangerouslySetInnerHTML={{ __html: satuan?.hymne }} />
                     </div>
                 </div>
                 <div className="h-10" />

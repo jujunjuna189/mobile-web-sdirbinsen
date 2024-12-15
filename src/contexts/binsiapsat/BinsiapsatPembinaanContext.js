@@ -95,11 +95,11 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
             ],
         };
 
-        if (location.state?.category === 'ekko') {
+        if (location.state?.category?.key === 'ekko') {
             onGetSiapsat({ satuan_id: location.state?.satuan?.id, menu: { title: 'Kemantapan' } });
         }
 
-        setMenus([...menus[location.state?.category]]);
+        setMenus([...menus[location.state?.category.key]]);
     }
 
     const getSatuan = async () => {
@@ -119,9 +119,8 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
     }
 
     const onGetSiapsat = async ({ satuan_id, menu }) => {
-        setSiapsat({});
-        await getSiapsatRequest({ filter: `category=${location.state?.category ?? ''}&satuan_id=${satuan_id}&title=${menu.title}` }).then((res) => {
-            setSiapsat(res?.data?.[0] ?? {});
+        await getSiapsatRequest({ filter: `category=${location.state?.category?.key ?? ''}&satuan_id=${satuan_id}&title=${menu.title}` }).then((res) => {
+            setSiapsat({ ...siapsat, [menu.title]: res?.data?.[0] ?? {} });
         });
     }
 

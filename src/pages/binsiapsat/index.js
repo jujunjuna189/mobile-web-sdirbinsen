@@ -24,7 +24,7 @@ const BinsiapsatPage = () => {
                     </div>
                 </div>
                 <div className="px-3 mt-4 justify-center">
-                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3" onClick={() => navigation(RouterName.binsiapsatSatuan, { state: { category: "haljol" } })}>
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3" onClick={() => navigation(RouterName.binsiapsatSatuan, { state: { category: { title: "PEMBINAAN SATUAN", key: "haljol" } } })}>
                         <div className="flex justify-center items-center py-2">
                             <img src={icProcess} alt="icon" className="w-[30px] -mb-1" />
                         </div>
@@ -32,7 +32,7 @@ const BinsiapsatPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Haljol Binsat Armed</strong>
                         </div>
                     </div>
-                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binsiapsatSatuan, { state: { category: "ekko" } })}>
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binsiapsatSatuan, { state: { category: { title: "DATA EKKO", key: "ekko" } } })}>
                         <div className="flex justify-center items-center py-2">
                             <img src={icEssay} alt="icon" className="w-[30px] -mb-1" />
                         </div>
@@ -40,7 +40,7 @@ const BinsiapsatPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data EKKO</strong>
                         </div>
                     </div>
-                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binsiapsatSatgasMenus, { state: { category: "satgas" } })}>
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.binsiapsatSatgasMenus, { state: { category: { key: "satgas" } } })}>
                         <div className="flex justify-center items-center py-2">
                             <img src={icWorkPlan} alt="icon" className="w-[30px] -mb-1" />
                         </div>

@@ -29,6 +29,7 @@ export const RouterName = {
     binsiapsatSatuanPembinaan: "/binsiapsat-satuan-pembinaan",
     binsiapsatSatgasMenus: "/binsiapsat-satgas-menus",
     binsiapsatSatgasSatuan: "/binsiapsat-satgas-satuan",
+    binsiapsatSatgasPreview: "/binsiapsat-satgas-preview",
     // Buku Pintar
     bukuPintar: "/buku-pintar",
     bukuPintarList: "/buku-pintar-list",

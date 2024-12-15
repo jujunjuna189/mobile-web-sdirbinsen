@@ -1,9 +1,10 @@
-import { bnrBg, icDataGathering, imgMainBg } from "../../../assets";
+import { bnrBg, icDataGathering, icHourglass, imgMainBg } from "../../../assets";
 import { Content, InputSearch, Navbar } from "../../../components";
 import { UseBinsiapsatSatuanContext } from "../../../contexts/binsiapsat/BinsiapsatSatuanContext";
+import { RouterName } from "../../../utils";
 
 const BinsiapsatSatgasSatuanPage = () => {
-    const { location, satuan, onSearch } = UseBinsiapsatSatuanContext();
+    const { navigation, location, satuan, onSearch } = UseBinsiapsatSatuanContext();
 
     return (
         <Content>
@@ -31,7 +32,7 @@ const BinsiapsatSatgasSatuanPage = () => {
                 <div className="grid grid-cols-2 gap-5 px-3 mt-4 justify-center">
                     {satuan?.data?.map((item, index) => {
                         return (
-                            <div key={index} className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => { }}>
+                            <div key={index} className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.binsiapsatSatgasPreview, { state: { satuan: item, category: { icon: icHourglass, title: "Riwayat Satgas" } } })}>
                                 <div className="h-full bg-[#4B7D5E]">
                                     <div className="flex justify-center items-center py-1">
                                         <img src={item.logo} alt="icon" className="w-[50px] max-w-[50px] h-[55px] -mb-2" />

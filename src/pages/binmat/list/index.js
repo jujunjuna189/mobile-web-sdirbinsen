@@ -45,24 +45,6 @@ const BinmatListPage = () => {
                                                     <span className="font-medium">{item.satuan?.nama ?? '-'}</span>
                                                 </div>
                                             </div>
-                                            <div className="flex gap-1">
-                                                <div className="w-16 flex justify-between">
-                                                    <span className="font-medium">Kategori</span>
-                                                    <span className="font-medium">:</span>
-                                                </div>
-                                                <div className="grow">
-                                                    <span className="font-medium">{item.kategori}</span>
-                                                </div>
-                                            </div>
-                                            <div className="flex gap-1">
-                                                <div className="w-16 flex justify-between">
-                                                    <span className="font-medium">Komponen</span>
-                                                    <span className="font-medium">:</span>
-                                                </div>
-                                                <div className="grow">
-                                                    <span className="font-medium">{item.jenis}</span>
-                                                </div>
-                                            </div>
                                             {["taktik", "pengamanan"].includes(location.state?.type?.key) !== true && (
                                                 <>
                                                     <div className="flex gap-1">
