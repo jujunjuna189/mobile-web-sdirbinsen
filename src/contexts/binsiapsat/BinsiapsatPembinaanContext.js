@@ -31,7 +31,7 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
                 },
                 {
                     icon: '',
-                    title: 'Meteriil',
+                    title: 'Materiel',
                     router: "",
                     isShowDetail: false,
                 },
@@ -57,7 +57,7 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
             'ekko': [
                 {
                     icon: '',
-                    title: 'Kemantapan',
+                    title: 'Mantap',
                     with: 'design',
                     router: RouterName.binsiapsatSatuan,
                     isShowDetail: false,
@@ -96,7 +96,7 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
         };
 
         if (location.state?.category?.key === 'ekko') {
-            onGetSiapsat({ satuan_id: location.state?.satuan?.id, menu: { title: 'Kemantapan' } });
+            onGetSiapsat({ satuan_id: location.state?.satuan?.id, menu: { title: 'Mantap' } });
         }
 
         setMenus([...menus[location.state?.category.key]]);
