@@ -36,8 +36,8 @@ const BinsiapsatPembinaanPage = () => {
                                 <div className="bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-md p-1">
                                     <div className="bg-[#4B7D5E]  px-16 pt-5 pb-2 rounded-md">
                                         <div className="flex justify-center">
-                                            <div className="p-1 bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-lg w-28 h-20 min-w-28 max-w-28 -mt-16">
-                                                <div className="w-full h-full rounded-lg flex justify-center items-center bg-[#4B7D5E]">
+                                            <div className="p-1 bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-[10rem] w-32 h-20 min-w-32 max-w-32 -mt-16">
+                                                <div className="w-full h-full rounded-[10rem] flex justify-center items-center bg-[#4B7D5E]">
                                                     <span className="text-white font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>
                                                         {siapsat?.[item.title]?.description ?? '-'}
                                                     </span>
