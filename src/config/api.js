@@ -33,3 +33,5 @@ export const API_LEARNING_GET = `${REACT_APP_API_URL}admin/learning`;
 export const API_ANNOUNCEMENT_GET = `${REACT_APP_API_URL}admin/pengumuman`;
 // Material List
 export const API_SIAPSAT_GET = `${REACT_APP_API_URL}admin/siapsat`;
+// Referensi
+export const API_REFERENSI_GET = `${REACT_APP_API_URL}admin/referensi`;

@@ -19,6 +19,7 @@ import BoardPage from "./board";
 import BukuPintarPage from "./buku_pintar";
 import BukuPintarListPage from "./buku_pintar/list";
 import BukuPintarPreviewPage from "./buku_pintar/preview";
+import ReferensiPage from "./referensi";
 import TrakorpsPage from "./trakorps";
 import TrakorpsDetailPage from "./trakorps/detail";
 import TrakorpsDataPejabatDansatPage from "./trakorps/detail/data_pejabat_dansat";
@@ -62,4 +63,5 @@ export {
     BukuPintarListPage,
     BukuPintarPreviewPage,
     BinsiapsatSatgasPreviewPage,
+    ReferensiPage,
 }

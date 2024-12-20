@@ -33,4 +33,6 @@ export const RouterName = {
     // Buku Pintar
     bukuPintar: "/buku-pintar",
     bukuPintarList: "/buku-pintar-list",
+    // Referensi
+    referensi: "/referensi",
 }

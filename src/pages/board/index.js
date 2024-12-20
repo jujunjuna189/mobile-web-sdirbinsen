@@ -79,7 +79,7 @@ const BoardPage = () => {
                         </div>
                     )}
                     {getLocalUser()?.permission?.["view.referensi"] && (
-                        <div className="h-[5.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => { }}>
+                        <div className="h-[5.5rem] rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.referensi)}>
                             <div className="h-full bg-[#4B7D5E]">
                                 <div className="flex justify-center items-center py-1">
                                     <img src={icProcess} alt="icon" className="w-[55px] -mb-2" />
