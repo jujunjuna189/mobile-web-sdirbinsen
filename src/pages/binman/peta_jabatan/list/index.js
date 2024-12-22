@@ -5,7 +5,8 @@ import { calculateDifferenceDate } from "../../../../utils/calculate/CalculateDa
 import { ValidDateConvert } from "../../../../utils/convert/ValidDateConvert";
 
 const BinmanPetaJabatanListPage = () => {
-    const { satuan, petaJabatanSummary, petaJabatan, onSearch, onFilter } = UseBinmanPetaJabatanListContext();
+    var no = 1;
+    const { satuan, petaJabatanSummary, petaJabatan, onFilter, onTogglePersonelDetail } = UseBinmanPetaJabatanListContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -32,7 +33,7 @@ const BinmanPetaJabatanListPage = () => {
                     </div>
                 </div>
                 <div className="flex gap-3 mt-3 px-3">
-                    <InputSearch onChange={(value) => onSearch({ value: value })} placeholder="Cari Jabatan..." />
+                    <InputSearch onChange={(value) => onFilter({ field: 'search', value: value })} placeholder="Cari Jabatan..." />
                     <div className="bg-white px-4 py-2 rounded-lg flex justify-center items-center">
                         <img src={icFilter} alt="icon" className="w-8" />
                     </div>
@@ -56,56 +57,58 @@ const BinmanPetaJabatanListPage = () => {
                             <div key={index}>
                                 {petaJabatan?.data[item].map((itemChild, indexChild) => {
                                     return (
-                                        <div key={indexChild} className={`${itemChild.personil ? "bg-[#2E8288]" : "bg-[#81070A]"} rounded-md px-2 py-2 relative mb-2`}>
+                                        <div key={indexChild} className={`${itemChild.personil ? "bg-[#2E8288]" : "bg-[#81070A]"} rounded-md px-2 py-2 relative mb-2`} onClick={() => onTogglePersonelDetail(item, indexChild)}>
                                             <div className={`absolute top-1 -left-2 w-6 h-6 bg-[#4B7D5E] border border-[#FFDB66] flex justify-center items-center rounded-full`}>
-                                                <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{indexChild + 1}</span>
+                                                <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{no++}</span>
                                             </div>
                                             <div className="pl-4 pr-2">
                                                 <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>{itemChild.jabatan}</span>
                                                 <div className="flex flex-col">
                                                     <span className="text-white font-bold" style={{ textShadow: "0px 1px 3px #000000" }}>Lama: {itemChild.personil?.tmt_jab != null ? calculateDifferenceDate(ValidDateConvert(itemChild.personil?.tmt_jab), new Date()).years === 0 ? "Tahun" : `${calculateDifferenceDate(ValidDateConvert(itemChild.personil?.tmt_jab), new Date()).years} Tahun` : "-"} {itemChild.personil?.tmt_jab != null ? calculateDifferenceDate(ValidDateConvert(itemChild.personil?.tmt_jab), new Date()).months === 0 ? 'Bulan' : `${calculateDifferenceDate(ValidDateConvert(itemChild.personil?.tmt_jab), new Date()).months} Bulan` : "-"}</span>
                                                 </div>
-                                                <div className="bg-white border border-black rounded-md p-2">
-                                                    <div className="flex gap-2">
-                                                        <div>
-                                                            <img src={icSoldier3} alt="img" width={60} />
-                                                        </div>
-                                                        <div className="leading-5">
-                                                            <div className="flex gap-1">
-                                                                <div className="w-16">
-                                                                    <span className="font-medium">Nama</span>
-                                                                </div>
-                                                                <div className="grow">
-                                                                    <span className="font-medium">: {itemChild.personil?.nama ?? '-'}</span>
-                                                                </div>
+                                                {itemChild.isShowDetail && (
+                                                    <div className="bg-white border border-black rounded-md p-2">
+                                                        <div className="flex gap-2">
+                                                            <div>
+                                                                <img src={icSoldier3} alt="img" width={60} />
                                                             </div>
-                                                            <div className="flex gap-1">
-                                                                <div className="w-16">
-                                                                    <span className="font-medium">NRP</span>
+                                                            <div className="leading-5">
+                                                                <div className="flex gap-1">
+                                                                    <div className="w-16">
+                                                                        <span className="font-medium">Nama</span>
+                                                                    </div>
+                                                                    <div className="grow">
+                                                                        <span className="font-medium">: {itemChild.personil?.nama ?? '-'}</span>
+                                                                    </div>
                                                                 </div>
-                                                                <div className="grow">
-                                                                    <span className="font-medium">: {itemChild.personil?.nrp ?? '-'}</span>
+                                                                <div className="flex gap-1">
+                                                                    <div className="w-16">
+                                                                        <span className="font-medium">NRP</span>
+                                                                    </div>
+                                                                    <div className="grow">
+                                                                        <span className="font-medium">: {itemChild.personil?.nrp ?? '-'}</span>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            <div className="flex gap-1">
-                                                                <div className="w-16">
-                                                                    <span className="font-medium">Pangkat</span>
+                                                                <div className="flex gap-1">
+                                                                    <div className="w-16">
+                                                                        <span className="font-medium">Pangkat</span>
+                                                                    </div>
+                                                                    <div className="grow">
+                                                                        <span className="font-medium">: {itemChild.personil?.pangkat ?? '-'}</span>
+                                                                    </div>
                                                                 </div>
-                                                                <div className="grow">
-                                                                    <span className="font-medium">: {itemChild.personil?.pangkat ?? '-'}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div className="flex gap-1">
-                                                                <div className="w-16">
-                                                                    <span className="font-medium">TMT</span>
-                                                                </div>
-                                                                <div className="grow">
-                                                                    <span className="font-medium">: {itemChild.personil?.tmt_jab ?? '-'}</span>
+                                                                <div className="flex gap-1">
+                                                                    <div className="w-16">
+                                                                        <span className="font-medium">TMT</span>
+                                                                    </div>
+                                                                    <div className="grow">
+                                                                        <span className="font-medium">: {itemChild.personil?.tmt_jab ?? '-'}</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                )}
                                             </div>
                                         </div>
                                     );

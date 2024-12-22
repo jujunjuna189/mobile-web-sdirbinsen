@@ -15,12 +15,10 @@ export const BinmatSatuanContextProvider = ({ children }) => {
     const getSatuan = async ({ filter = "" }) => {
         await getSatuanRequest({ filter: `search=${filter}` }).then((res) => {
             setSatuan(res);
-            console.log(res);
         });
     }
 
     const onSearch = ({ value }) => {
-        console.log(value);
         getSatuan({ filter: value });
     }
 

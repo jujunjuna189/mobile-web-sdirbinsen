@@ -27,7 +27,7 @@ export const BinmanPetaJabatanListContextProvider = ({ children }) => {
     }
 
     const getPetaJabatan = async ({ filter = {} }) => {
-        await getPetaJabatanRequest({ filter: `satuan_id=${location.state?.satuan?.id}&jabatan=${filter.jabatan ?? ''}&personil_id=${filter.personil_id ?? ''}` }).then((res) => {
+        await getPetaJabatanRequest({ filter: `satuan_id=${location.state?.satuan?.id}&search=${filter.search ?? ''}&jabatan=${filter.jabatan ?? ''}&personil_id=${filter.personil_id ?? ''}` }).then((res) => {
             setPetaJabatan(res);
         });
     }
@@ -41,6 +41,16 @@ export const BinmanPetaJabatanListContextProvider = ({ children }) => {
         getPetaJabatan({ filter: { ...filter, [field]: value } });
     }
 
+    const onTogglePersonelDetail = (item, indexChild) => {
+        if (!petaJabatan.data[item][indexChild]?.isShowDetail) {
+            const indexTrue = petaJabatan.data[item].findIndex((x) => x.isShowDetail === true);
+            indexTrue >= 0 && (petaJabatan.data[item][indexTrue].isShowDetail = false);
+        }
+
+        petaJabatan.data[item][indexChild].isShowDetail = !petaJabatan.data[item][indexChild]?.isShowDetail;
+        setPetaJabatan({ ...petaJabatan });
+    }
+
     useEffect(() => {
         getSatuan();
         getPetaJabatanSummary();
@@ -49,7 +59,7 @@ export const BinmanPetaJabatanListContextProvider = ({ children }) => {
     }, []);
 
     return (
-        <BinmanPetaJabatanListContext.Provider value={{ navigation, satuan, petaJabatanSummary, petaJabatan, onSearch, onFilter }}>
+        <BinmanPetaJabatanListContext.Provider value={{ navigation, satuan, petaJabatanSummary, petaJabatan, onSearch, onFilter, onTogglePersonelDetail }}>
             {children}
         </BinmanPetaJabatanListContext.Provider>
     );

@@ -163,11 +163,11 @@ const BinmanPersListPage = () => {
                                                 </div>
                                                 <div className="flex gap-1">
                                                     <div className="w-16 max-w-16 min-w-16 flex justify-between">
-                                                        <span className="font-medium">TMT</span>
+                                                        <span className="font-medium">TMT TNI</span>
                                                         <span>:</span>
                                                     </div>
                                                     <div className="grow">
-                                                        <span className="font-medium"> {item.tmt_1 ?? '-'}</span>
+                                                        <span className="font-medium"> {item.tmt_tni ?? '-'}</span>
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">

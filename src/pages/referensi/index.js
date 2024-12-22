@@ -18,7 +18,7 @@ const ReferensiPage = () => {
                     </div>
                     <hr className="my-4" />
                     <div className="">
-                        <span className="font-semibold text-white">Folder</span>
+                        <span className="font-semibold text-white">Referensi</span>
                     </div>
                     <div className="mt-2 gap-2">
                         {referensi?.data?.map((item, index) => {

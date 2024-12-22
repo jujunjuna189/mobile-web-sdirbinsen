@@ -13,7 +13,7 @@ export const BinmanPersContextProvider = ({ children }) => {
 
     const getPersonil = async ({ search = "", tmt_1 }) => {
         setPersonil({});
-        await getPersonilRequest({ filter: `per_page=20&sumber_pa=${location?.state?.category}&tmt_1=${tmt_1 ?? (filter.tmt_1 ?? '')}&search=${search}` }).then((res) => {
+        await getPersonilRequest({ filter: `per_page=20&sumber_pa=${location?.state?.category}&tmt_tni=${tmt_1 ?? (filter.tmt_1 ?? '')}&search=${search}` }).then((res) => {
             setPersonil(res);
         });
     }
@@ -23,7 +23,7 @@ export const BinmanPersContextProvider = ({ children }) => {
         // Cek apakah scroll sudah mentok ke bawah
         if ((scrollTop + 1) + clientHeight >= scrollHeight && !personil.loading) {
             setPersonil({ ...personil, loading: true });
-            await getPersonilRequest({ filter: `page=${(personil.current_page ?? 1) + 1}&per_page=20&sumber_pa=${location?.state?.category}&tmt_1=${filter.tmt_1 ?? ''}&search=${filter.search ?? ''}` }).then((res) => {
+            await getPersonilRequest({ filter: `page=${(personil.current_page ?? 1) + 1}&per_page=20&sumber_pa=${location?.state?.category}&tmt_tni=${filter.tmt_1 ?? ''}&search=${filter.search ?? ''}` }).then((res) => {
                 setPersonil({ ...res, data: [...(personil.data ?? []), ...res.data], loading: false });
             });
         }
