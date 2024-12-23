@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { bnrBg, icArmy, icDataGathering, icInfantry, imgBgNoBg, imgMainBg } from "../../assets";
 import { Content, Navbar } from "../../components";
+import { getLocalUser } from "../../service/LocalStorage";
 import { RouterName } from "../../utils";
 
 const BinmanPage = () => {
@@ -28,36 +29,42 @@ const BinmanPage = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-1 px-3 mt-5 justify-center">
-                    <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanPers)}>
-                        <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
-                            <div className="flex justify-center items-center py-2 px-2">
-                                <img src={icArmy} alt="icon" className="w-[40px] -mb-2" />
-                            </div>
-                            <div className="text-center">
-                                <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>DATA PERS</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanPetaJabatan)}>
-                        <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
-                            <div className="flex justify-center items-center py-2 px-2">
-                                <img src={icInfantry} alt="icon" className="w-[40px] -mb-2" />
-                            </div>
-                            <div className="text-center">
-                                <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>PETA JABATAN</strong>
+                    {getLocalUser()?.permission?.["view.binman.data-pers"] && (
+                        <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanPers)}>
+                            <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
+                                <div className="flex justify-center items-center py-2 px-2">
+                                    <img src={icArmy} alt="icon" className="w-[40px] -mb-2" />
+                                </div>
+                                <div className="text-center">
+                                    <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>DATA PERS</strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanKompersSatjar)}>
-                        <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
-                            <div className="flex justify-center items-center py-2 px-2">
-                                <img src={icDataGathering} alt="icon" className="w-[40px] -mb-2" />
-                            </div>
-                            <div className="text-center">
-                                <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPER SATJAR</strong>
+                    )}
+                    {getLocalUser()?.permission?.["view.binman.peta-jabatan"] && (
+                        <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanPetaJabatan)}>
+                            <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
+                                <div className="flex justify-center items-center py-2 px-2">
+                                    <img src={icInfantry} alt="icon" className="w-[40px] -mb-2" />
+                                </div>
+                                <div className="text-center">
+                                    <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>PETA JABATAN</strong>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    )}
+                    {getLocalUser()?.permission?.["view.binman.komper-satjar"] && (
+                        <div className="rounded-lg p-[0.20rem]" onClick={() => navigation(RouterName.binmanKompersSatjar)}>
+                            <div className="flex flex-row items-center h-full bg-[#4B7D5E] rounded-lg">
+                                <div className="flex justify-center items-center py-2 px-2">
+                                    <img src={icDataGathering} alt="icon" className="w-[40px] -mb-2" />
+                                </div>
+                                <div className="text-center">
+                                    <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPER SATJAR</strong>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
                 <div className="h-20" />
             </div>

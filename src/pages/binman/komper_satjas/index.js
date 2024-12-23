@@ -84,9 +84,9 @@ const BinmanKompersSatjarPage = () => {
                                                 {Object.keys(getColumnKey(item)?.value ?? {}).map((itemChild, indexChild) => {
                                                     return (
                                                         <tr key={indexChild}>
-                                                            {(getColumnKey(item)?.value?.[itemChild] ?? []).map((itemChildData, indexChildData) => {
+                                                            {getColumnKey(item)?.field?.map((itemChildData, indexChildData) => {
                                                                 return (
-                                                                    <td key={indexChildData} className={`${indexChildData !== 0 && 'text-center'} border-b`}>{JSON.parse(item.form)?.cellValues?.[itemChildData]}</td>
+                                                                    <td key={indexChildData} className={`${indexChildData !== 0 && 'text-center'} border-b min-w-12`}>{JSON.parse(item.form)?.cellValues?.[getColumnKey(item)?.value?.[itemChild][indexChildData]] ?? '-'}</td>
                                                                 );
                                                             })}
                                                         </tr>
