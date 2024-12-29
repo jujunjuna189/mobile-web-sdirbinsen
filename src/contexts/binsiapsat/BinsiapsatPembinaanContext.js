@@ -126,8 +126,9 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
 
     const onGetCategory = (value) => {
         var data = value.split('/');
-        var percent = (data?.[1] ?? 0).toString().replace(/\D/g, '');
-        console.log(percent);
+        var percent = (data?.[1] ?? 0).toString()
+        .replace(/[^\d,]/g, '') // Hapus semua karakter kecuali angka dan koma
+        .replace(',', '.'); // Ganti koma dengan titik
 
         if(percent <= 59.99){
             return "TIDAK SIAP TUGAS";

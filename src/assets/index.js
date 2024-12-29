@@ -1,3 +1,6 @@
+import avatarUser from "./avatar/avatarUser.png";
+import avatarAdmin from "./avatar/avatarAdmin.png";
+import avatarSuperAdmin from "./avatar/avatarSuperAdmin.png";
 import imgBg from "./image/bg.png";
 import imgBgNoBg from "./image/bgNoBg.webp";
 import imgMainBg from "./image/main-bg.webp";
@@ -60,6 +63,9 @@ import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
 import fnAgencyFbReg from "./font/agencyfb_reg.ttf";
 
 export {
+    avatarUser,
+    avatarAdmin,
+    avatarSuperAdmin,
     imgBg,
     imgBgNoBg,
     imgMainBg,
