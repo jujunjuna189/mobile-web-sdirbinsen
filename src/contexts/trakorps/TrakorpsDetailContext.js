@@ -13,7 +13,6 @@ export const TrakorpsDetailContextProvider = ({ children }) => {
     const getSatuan = async () => {
         await getSatuanDetailRequest({ id: location.state?.satuan?.id }).then((res) => {
             setSatuan(res);
-            console.log(res);
         });
     }
 

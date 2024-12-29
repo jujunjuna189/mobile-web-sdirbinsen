@@ -1,6 +1,7 @@
 import imgBg from "./image/bg.png";
 import imgBgNoBg from "./image/bgNoBg.webp";
 import imgMainBg from "./image/main-bg.webp";
+import imgAppName from "./image/appName.webp";
 import logLogo from "./logo/logo.png";
 import icWarning from "./icon/icWarning.png";
 import icBase from "./icon/icBase.png";
@@ -62,6 +63,7 @@ export {
     imgBg,
     imgBgNoBg,
     imgMainBg,
+    imgAppName,
     logLogo,
     icWarning,
     icBase,

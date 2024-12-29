@@ -31,51 +31,81 @@ const TrakorpsDataPrestasiPage = () => {
                             </div>
                         )}
                         {satuan?.data?.map((item, index) => {
-                            return (
-                                <div key={index} className="border py-1 px-1 rounded-lg">
-                                    <div className="flex gap-3 mb-2">
-                                        {item.gambar && (
-                                            <div className="h-16 max-h-16 min-h-16 w-16 max-w-16 min-w-16 relative border rounded-lg overflow-hidden mt-1">
-                                                <img src={item.gambar} alt="ImagePrestasi" className="object-cover w-full h-full" />
+                            if(item.kategori === 'perorangan'){
+                                return (
+                                    <div key={index} className="border py-1 px-1 rounded-lg">
+                                        <div className="flex gap-3 mb-2">
+                                            {item.gambar && (
+                                                <div className="h-16 max-h-16 min-h-16 w-16 max-w-16 min-w-16 relative border rounded-lg overflow-hidden mt-1">
+                                                    <img src={item.gambar} alt="ImagePrestasi" className="object-cover w-full h-full" />
+                                                </div>
+                                            )}
+                                            <div className="leading-5">
+                                                <div className="">
+                                                    <div className="flex gap-1">
+                                                        <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                            <span className="font-medium">Nama</span>
+                                                            <span>:</span>
+                                                        </div>
+                                                        <div className="grow">
+                                                            <span className="font-medium"> {item.nama ?? '-'}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex gap-1">
+                                                        <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                            <span className="font-medium">Pangkat</span>
+                                                            <span>:</span>
+                                                        </div>
+                                                        <div className="grow">
+                                                            <span className="font-medium"> {item.pangkat ?? '-'}</span>
+                                                        </div>
+                                                    </div>
+                                                    <div className="flex gap-1">
+                                                        <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                            <span className="font-medium">Tahun</span>
+                                                            <span>:</span>
+                                                        </div>
+                                                        <div className="grow">
+                                                            <span className="font-medium"> {item.tahun ?? '-'}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr className="my-2" />
+                                                <span className="font-semibold text-[14px]">{item.title}</span>
+                                                <p>{item.deskripsi}</p>
                                             </div>
-                                        )}
-                                        <div className="leading-5">
-                                            <div className="">
-                                                <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
-                                                        <span className="font-medium">Nama</span>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div className="grow">
-                                                        <span className="font-medium"> {item.nama ?? '-'}</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
-                                                        <span className="font-medium">Pangkat</span>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div className="grow">
-                                                        <span className="font-medium"> {item.pangkat ?? '-'}</span>
-                                                    </div>
-                                                </div>
-                                                <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
-                                                        <span className="font-medium">Tahun</span>
-                                                        <span>:</span>
-                                                    </div>
-                                                    <div className="grow">
-                                                        <span className="font-medium"> {item.tahun ?? '-'}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <hr className="my-2" />
-                                            <span className="font-semibold text-[14px]">{item.title}</span>
-                                            <p>{item.deskripsi}</p>
                                         </div>
                                     </div>
-                                </div>
-                            );
+                                );
+                            }else{
+                                return (
+                                    <div key={index} className="border py-1 px-1 rounded-lg">
+                                        <div className="flex gap-3 mb-2">
+                                            {item.gambar && (
+                                                <div className="h-16 max-h-16 min-h-16 w-16 max-w-16 min-w-16 relative border rounded-lg overflow-hidden mt-1">
+                                                    <img src={item.gambar} alt="ImagePrestasi" className="object-cover w-full h-full" />
+                                                </div>
+                                            )}
+                                            <div className="leading-5">
+                                                <div className="">
+                                                    <div className="flex gap-1">
+                                                        <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                            <span className="font-medium">Tahun</span>
+                                                            <span>:</span>
+                                                        </div>
+                                                        <div className="grow">
+                                                            <span className="font-medium"> {item.tahun ?? '-'}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <hr className="my-2" />
+                                                <span className="font-semibold text-[14px]">{item.title}</span>
+                                                <p>{item.deskripsi}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            }
                         })}
                     </div>
                 </div>

@@ -22,7 +22,7 @@ import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/T
 import { TrakorpsDetailDataPurnawirawanContextProvider } from './contexts/trakorps/TrakorpsDetailDataPurnawirawanContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinmatSubPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatgasMenusPage, BinsiapsatSatgasPreviewPage, BinsiapsatSatgasSatuanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, ReferensiPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinmatSubPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatgasMenusPage, BinsiapsatSatgasPreviewPage, BinsiapsatSatgasSatuanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, ReferensiPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsMenusPrestasiPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -81,6 +81,9 @@ function App() {
           <TrakorpsDetailDataPrestasiContextProvider>
             <TrakorpsDataPrestasiPage />
           </TrakorpsDetailDataPrestasiContextProvider>
+        } />
+        <Route path={RouterName.trakorpsDetailMenusPrestasi} element={
+          <TrakorpsMenusPrestasiPage />
         } />
         <Route path={RouterName.trakorpsDetailDataPejabatDansat} element={
           <TrakorpsDetailDataPejabatDansatContextProvider>

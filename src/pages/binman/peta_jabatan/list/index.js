@@ -32,7 +32,7 @@ const BinmanPetaJabatanListPage = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex gap-3 mt-3 px-3">
+                <div className="flex gap-3 mt-3 px-3 bg-black">
                     <InputSearch onChange={(value) => onFilter({ field: 'search', value: value })} placeholder="Cari Jabatan..." />
                     <div className="bg-white px-4 py-2 rounded-lg flex justify-center items-center">
                         <img src={icFilter} alt="icon" className="w-8" />

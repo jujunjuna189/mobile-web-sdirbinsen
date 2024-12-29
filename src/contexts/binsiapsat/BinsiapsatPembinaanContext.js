@@ -124,6 +124,22 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
         });
     }
 
+    const onGetCategory = (value) => {
+        var data = value.split('/');
+        var percent = (data?.[1] ?? 0).toString().replace(/\D/g, '');
+        console.log(percent);
+
+        if(percent <= 59.99){
+            return "TIDAK SIAP TUGAS";
+        } else if(percent <= 79.99){
+            return "SIAP TUGAS";
+        } else if(percent <= 89.99){
+            return "SIAP OPS";
+        } else if(percent <= 100){
+            return "SIAGA OPS";
+        }
+    }
+
     useEffect(() => {
         getMenus();
         getSatuan();
@@ -131,7 +147,7 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
     }, []);
 
     return (
-        <BinsiapsatPembinaanContext.Provider value={{ navigation, location, satuan, menus, siapsat, onTogglePersonelDetail }}>
+        <BinsiapsatPembinaanContext.Provider value={{ navigation, location, satuan, menus, siapsat, onTogglePersonelDetail, onGetCategory }}>
             {children}
         </BinsiapsatPembinaanContext.Provider>
     );

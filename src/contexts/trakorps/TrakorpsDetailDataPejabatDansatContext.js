@@ -13,7 +13,6 @@ export const TrakorpsDetailDataPejabatDansatContextProvider = ({ children }) => 
     const getDataPejabatDansat = async () => {
         await getSatuanPejabatDansatRequest({ params: { satuan: { id: location.state?.satuan.id } } }).then((res) => {
             setSatuan(res);
-            console.log(res);
         });
     }
 

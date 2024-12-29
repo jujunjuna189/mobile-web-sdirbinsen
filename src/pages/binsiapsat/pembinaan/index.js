@@ -3,7 +3,7 @@ import { Content, Navbar } from "../../../components";
 import { UseBinsiapsatPembinaanContext } from "../../../contexts/binsiapsat/BinsiapsatPembinaanContext";
 
 const BinsiapsatPembinaanPage = () => {
-    const { satuan, menus, siapsat, onTogglePersonelDetail } = UseBinsiapsatPembinaanContext();
+    const { satuan, menus, siapsat, onTogglePersonelDetail, onGetCategory } = UseBinsiapsatPembinaanContext();
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
@@ -34,19 +34,20 @@ const BinsiapsatPembinaanPage = () => {
                         if (item.with === 'design') return (
                             <div key={index} className="flex justify-center my-5 mt-16" onClick={() => onTogglePersonelDetail(index)}>
                                 <div className="bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-md p-1">
-                                    <div className="bg-[#4B7D5E]  px-16 pt-5 pb-2 rounded-md">
+                                    <div className="bg-[#4B7D5E] px-16 pt-5 pb-2 rounded-md">
                                         <div className="flex justify-center">
-                                            <div className="p-1 bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-[10rem] w-32 h-20 min-w-32 max-w-32 -mt-16">
+                                            <div className="p-1 bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] rounded-[10rem] w-[10rem] h-16 min-w-[10rem] -mt-14">
                                                 <div className="w-full h-full rounded-[10rem] flex justify-center items-center bg-[#4B7D5E]">
-                                                    <span className="text-white font-black text-2xl" style={{ textShadow: "0px 1px 3px #000000" }}>
-                                                        {siapsat?.[item.title]?.description ?? '-'}
+                                                    <span className="text-white font-black text-xl whitespace-pre" style={{ textShadow: "0px 1px 3px #000000" }}>
+                                                        {onGetCategory(siapsat?.[item.title]?.description ?? '-')}
                                                     </span>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="flex justify-center mt-1">
-                                            <div className="text-center">
+                                        <div className="flex justify-center mt-3">
+                                            <div className="text-center flex gap-2 items-center">
                                                 <strong className="text-white font-black text-lg" style={{ textShadow: "0px 1px 3px #000000" }}>{item.title}</strong>
+                                                <strong className="text-white font-black text-lg" style={{ textShadow: "0px 1px 3px #000000" }}>{siapsat?.[item.title]?.description ?? '-'}</strong>
                                             </div>
                                         </div>
                                     </div>

@@ -18,7 +18,7 @@ const BinmanPage = () => {
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto">
                 <Navbar />
                 <div className="my-2 px-3 flex justify-center items-center">
-                    <img src={bnrBg} alt="Banner gunner smart application" />
+                    <img src={bnrBg} alt="Banner gunner smart application" className="w-full h-[25vh] rounded-xl" />
                     <div className="absolute pb-2">
                         <div className="flex justify-center items-center pt-1">
                             <img src={icInfantry} alt="icon" className="w-[100px] -mb-3" />

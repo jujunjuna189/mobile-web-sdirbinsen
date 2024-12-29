@@ -13,7 +13,7 @@ const TrakorpsDetailPage = () => {
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto">
                 <Navbar />
                 <div className="my-2 px-3 flex justify-center items-center py-2">
-                    <img src={bnrBg} alt="Banner gunner smart application" />
+                    <img src={bnrBg} alt="Banner gunner smart application" className="w-full h-[25vh] rounded-xl" />
                     <div className="absolute pb-2">
                         <div className="flex justify-center items-center pt-1">
                             {satuan.logo && (
@@ -50,7 +50,7 @@ const TrakorpsDetailPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Tradisi Satuan</strong>
                         </div>
                     </div>
-                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.trakorpsDetailDataPrestasi, { state: { satuan: { id: satuan.id } } })}>
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.trakorpsDetailMenusPrestasi, { state: { satuan: { id: satuan.id } } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icExperts} alt="icon" className="w-[40px] -mb-1" />
                         </div>
@@ -66,14 +66,16 @@ const TrakorpsDetailPage = () => {
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Pejabat Dansat</strong>
                         </div>
                     </div>
-                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.trakorpsDetailDataPurnawirawan, { state: { satuan: { id: satuan.id } } })}>
-                        <div className="flex justify-center items-center py-1">
-                            <img src={icSoldier} alt="icon" className="w-[40px] -mb-1" />
+                    {satuan.nama?.toLowerCase() === 'pussenarmed' && (
+                        <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.trakorpsDetailDataPurnawirawan, { state: { satuan: { id: satuan.id } } })}>
+                            <div className="flex justify-center items-center py-1">
+                                <img src={icSoldier} alt="icon" className="w-[40px] -mb-1" />
+                            </div>
+                            <div className="text-center">
+                                <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Purnawirawan</strong>
+                            </div>
                         </div>
-                        <div className="text-center">
-                            <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Data Purnawirawan</strong>
-                        </div>
-                    </div>
+                    )}
                     <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.trakorpsDetailMars, { state: { satuan: { id: satuan.id } } })}>
                         <div className="flex justify-center items-center py-1">
                             <img src={icMarchingBand2} alt="icon" className="w-[40px] -mb-1" />

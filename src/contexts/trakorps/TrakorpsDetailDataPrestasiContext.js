@@ -11,13 +11,14 @@ export const TrakorpsDetailDataPrestasiContextProvider = ({ children }) => {
     const [satuan, setSatuan] = useState({});
 
     const getDataPrestasi = async () => {
-        await getSatuanPrestasiRequest({ params: { satuan: { id: location.state?.satuan.id } } }).then((res) => {
+        await getSatuanPrestasiRequest({ params: { satuan: { id: location.state?.satuan.id } }, filter: `bidang=${location.state?.bidang}&kategori=${location.state?.kategori}` }).then((res) => {
             setSatuan(res);
             console.log(res);
         });
     }
 
     useEffect(() => {
+        console.log(location.state);
         getDataPrestasi();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);

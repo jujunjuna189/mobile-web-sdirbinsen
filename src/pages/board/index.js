@@ -1,4 +1,4 @@
-import { bnrName, icBase, icDataGathering, icInfantry, icMateriel, icOnlineLesson, icProcess, icWarning, imgMainBg } from "../../assets";
+import { bnrBg, icBase, icDataGathering, icInfantry, icMateriel, icOnlineLesson, icProcess, icWarning, imgAppName, imgMainBg } from "../../assets";
 import { Content, Navbar } from "../../components";
 import { UseBoardContext } from "../../contexts/board/BoardContext";
 import { getLocalUser } from "../../service/LocalStorage";
@@ -14,8 +14,11 @@ const BoardPage = () => {
             </div>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto">
                 <Navbar />
-                <div className="my-2 px-3 flex justify-center">
-                    <img src={bnrName} alt="Banner gunner smart application" />
+                <div className="my-2 px-3 flex justify-center items-center">
+                    <div className="absolute w-[70%]">
+                        <img src={imgAppName} alt="Banner gunner smart application" />    
+                    </div>
+                    <img src={bnrBg} alt="Banner gunner smart application" className="w-full h-[25vh] rounded-xl" />
                 </div>
                 <div className="grid grid-cols-3 gap-5 px-3 mt-6 justify-center">
                     {getLocalUser()?.permission?.["view.trakorps"] && (

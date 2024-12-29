@@ -13,7 +13,7 @@ const BinmanKompersSatjarPage = () => {
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto">
                 <Navbar />
                 <div className="my-2 px-3 flex justify-center items-center">
-                    <img src={bnrBg} alt="Banner gunner smart application" />
+                    <img src={bnrBg} alt="Banner gunner smart application" className="w-full h-[25vh] rounded-xl" />
                     <div className="absolute pb-2">
                         <div className="flex justify-center items-center pt-1">
                             <img src={icDataGathering} alt="icon" className="w-[100px] -mb-3" />
@@ -35,7 +35,7 @@ const BinmanKompersSatjarPage = () => {
                         );
                     })}
                 </div>
-                <div className="sticky top-0 z-10 bg-black py-2">
+                <div className="sticky top-0 z-10 py-2 bg-black">
                     <div className="flex gap-3 px-3">
                         <InputSearch onChange={(value) => onSearch({ value: value })} placeholder="Cari Kompers Satjar..." />
                         <div className="bg-white px-4 py-2 rounded-lg flex justify-center items-center">

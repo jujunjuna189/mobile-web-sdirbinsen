@@ -12,7 +12,7 @@ const BinmatListPage = () => {
             </div>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto">
                 <Navbar />
-                <div className="sticky top-0 z-10 bg-black pb-2">
+                <div className="sticky top-0 z-10 pb-2 bg-black">
                     <div className="flex gap-3 mt-3 px-3">
                         <InputSearch onChange={(value) => onSearch({ value: value })} placeholder={`Cari ${location.state?.category?.title}...`} />
                         <div className="bg-white px-4 py-2 rounded-lg flex justify-center items-center">
