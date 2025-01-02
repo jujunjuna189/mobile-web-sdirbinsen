@@ -61,7 +61,14 @@ const BinmanPersListPage = () => {
                                 </div>
                                 <div className="flex gap-2">
                                     <div className="">
-                                        <img src={icPeople} alt="img" width={80} />
+                                        {!item.picture && (
+                                            <img src={icPeople} alt="img" width={80} />
+                                        )}
+                                        {item.picture && (
+                                            <div className="w-[80px] px-2">
+                                                <img src={item.picture} alt="img" className="w-full object-cover aspect-square rounded-full object-top" />
+                                            </div>
+                                        )}
                                     </div>
                                     <div>
                                         <span className="text-white font-bold uppercase" style={{ textShadow: "0px 1px 3px #000000" }}>{item.nama}</span>

@@ -8,12 +8,11 @@ export const TrakorpsDetailTradisiSatuanContextProvider = ({ children }) => {
     const navigation = useNavigate();
     const location = useLocation();
     // local state
-    const [satuan, setSatuan] = useState({});
+    const [satuan, setSatuan] = useState([]);
 
     const getTradisiSatuan = async () => {
         await getSatuanTradisiRequest({ params: { satuan: { id: location.state?.satuan.id } } }).then((res) => {
-            setSatuan(res?.data?.[0]);
-            console.log(res?.data?.[0]);
+            setSatuan(res?.data);
         });
     }
 

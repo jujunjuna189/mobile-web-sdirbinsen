@@ -99,7 +99,7 @@ const BukuPintarPage = () => {
                         </div>
                     )}
                     {getLocalUser()?.permission?.["view.learning.gelar-satuan-armed"] && (
-                        <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Renbanglarsat Armed", category: "renbanglarsat-armed" } })}>
+                        <div className="rounded-md bg-gradient-to-r from-[#A49F1D] via-[#FFFDBC] to-[#CFB20E] p-[0.20rem]" onClick={() => navigation(RouterName.bukuPintarList, { state: { title: "Gelar Satuan Armed", category: "gelar-satuan-armed" } })}>
                             <div className="h-full bg-[#4B7D5E] flex flex-col justify-between">
                                 <div className="flex justify-center items-center py-1 mt-2">
                                     <img src={icStartup} alt="icon" className="w-[40px] -mb-2" />
