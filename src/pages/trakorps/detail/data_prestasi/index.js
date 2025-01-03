@@ -31,7 +31,7 @@ const TrakorpsDataPrestasiPage = () => {
                             </div>
                         )}
                         {satuan?.data?.map((item, index) => {
-                            if(item.kategori === 'perorangan'){
+                            if (item.kategori === 'perorangan') {
                                 return (
                                     <div key={index} className="border py-1 px-1 rounded-lg">
                                         <div className="flex gap-3 mb-2">
@@ -72,12 +72,12 @@ const TrakorpsDataPrestasiPage = () => {
                                                 </div>
                                                 <hr className="my-2" />
                                                 <span className="font-semibold text-[14px]">{item.title}</span>
-                                                <p>{item.deskripsi}</p>
+                                                <div className="mt-3" style={{ display: 'flex', whiteSpace: 'pre-wrap' }} dangerouslySetInnerHTML={{ __html: item.deskripsi }} />
                                             </div>
                                         </div>
                                     </div>
                                 );
-                            }else{
+                            } else {
                                 return (
                                     <div key={index} className="border py-1 px-1 rounded-lg">
                                         <div className="flex gap-3 mb-2">
