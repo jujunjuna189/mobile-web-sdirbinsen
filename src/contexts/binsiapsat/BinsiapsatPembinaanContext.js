@@ -125,18 +125,19 @@ export const BinsiapsatPembinaanContextProvider = ({ children }) => {
     }
 
     const onGetCategory = (value) => {
+        if (value === '-') return 'Belum Ada Data';
         var data = value.split('/');
         var percent = (data?.[1] ?? 0).toString()
-        .replace(/[^\d,]/g, '') // Hapus semua karakter kecuali angka dan koma
-        .replace(',', '.'); // Ganti koma dengan titik
+            .replace(/[^\d,.]/g, '') // Hapus semua karakter kecuali angka dan koma
+            .replace(',', '.'); // Ganti koma dengan titik
 
-        if(percent <= 59.99){
+        if (percent <= 59.99) {
             return "TIDAK SIAP TUGAS";
-        } else if(percent <= 79.99){
+        } else if (percent <= 79.99) {
             return "SIAP TUGAS";
-        } else if(percent <= 89.99){
+        } else if (percent <= 89.99) {
             return "SIAP OPS";
-        } else if(percent <= 100){
+        } else if (percent <= 100) {
             return "SIAGA OPS";
         }
     }
