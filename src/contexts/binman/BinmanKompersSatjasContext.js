@@ -66,7 +66,7 @@ export const BinmanKompersSatjasListContextProvider = ({ children }) => {
         var values = {};
         valueData.forEach((item, index) => {
             for (var i = 0; i < valueData[index].length; i++) {
-                values = { ...values, [i]: [...(values[i] ?? []), valueData[index][i]] };
+                values = { ...values, [valueData[index][i].split('-')[0]]: [...(values[valueData[index][i].split('-')[0]] ?? []), valueData[index][i]] };
             }
         });
 
