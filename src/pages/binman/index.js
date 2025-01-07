@@ -60,7 +60,7 @@ const BinmanPage = () => {
                                     <img src={icDataGathering} alt="icon" className="w-[40px] -mb-2" />
                                 </div>
                                 <div className="text-center">
-                                    <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPER SATJAR</strong>
+                                    <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>KOMPERS SATJAR</strong>
                                 </div>
                             </div>
                         </div>
