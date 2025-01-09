@@ -27,7 +27,7 @@ export const dateFormatterV3 = (value) => {
 
 export const dateFormatterV4 = (value) => {
     const date = new Date(value);
-    return value === undefined ? '' : `${setZero(date.getDate())}-${setZero(date.getMonth())}-${date.getFullYear()}`;
+    return value === undefined ? '' : `${setZero(date.getDate())}-${setZero(date.getMonth() + 1)}-${date.getFullYear()}`;
 }
 
 const setZero = (value) => {
