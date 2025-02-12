@@ -1,16 +1,16 @@
-import { Content, Navbar } from "../../../../components";
+import { Content, InputSearch, Navbar } from "../../../../components";
 import { icSoldier, imgMainBg } from "../../../../assets";
 import { UseTrakorpsDetailDataPurnawirawanContext } from "../../../../contexts/trakorps/TrakorpsDetailDataPurnawirawanContext";
 
 const TrakorpsDataPurnawirawanPage = () => {
-    const { satuan, onTogglePersonelDetail } = UseTrakorpsDetailDataPurnawirawanContext();
+    const { filter, satuan, handleScroll, onTogglePersonelDetail, onSearch } = UseTrakorpsDetailDataPurnawirawanContext();
 
     return (
         <Content>
             <div className="absolute top-0 bottom-0 left-0 right-0 overflow-hidden flex justify-center items-end">
                 <img src={imgMainBg} alt="BackgroundApp" className="object-cover w-full" />
             </div>
-            <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto">
+            <div className="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto" onScroll={handleScroll}>
                 <Navbar />
                 <div className="px-3 mt-1">
                     <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3">
@@ -22,6 +22,22 @@ const TrakorpsDataPurnawirawanPage = () => {
                         </div>
                     </div>
                 </div>
+                <div className="flex gap-3 mt-3 px-3">
+                    <InputSearch onChange={(value) => onSearch({ search: value })} placeholder="Cari Purnawirawan..." />
+                    {/* <FilterPersonilPopup onFilter={(value) => onSearch({ tmt_1: value })} /> */}
+                </div>
+                {(Object.keys(filter).length > 0 && Object.keys(filter).every((item) => filter[item] !== "")) && (
+                    <div className="px-3 mt-2 text-white flex flex-row gap-1">
+                        <span className="">Filter:</span>
+                        <div className="flex flex-row gap-2">
+                            {Object.keys(filter).map((item, index) => {
+                                return (
+                                    <span key={index}>{filter[item]}</span>
+                                );
+                            })}
+                        </div>
+                    </div>
+                )}
                 <div className="px-3 mt-4 justify-center">
                     {satuan?.data?.length === 0 && (
                         <div className="bg-[#4B7D5E] rounded-md px-2 py-5 bg-opacity-60 relative mb-2 text-center flex flex-col">
