@@ -13,7 +13,7 @@ export const BinmatSatuanContextProvider = ({ children }) => {
     const setSatuan = useSatuanStore((state) => state.setSatuan);
 
     const getSatuan = async ({ filter = "" }) => {
-        await getSatuanRequest({ filter: `search=${filter}` }).then((res) => {
+        await getSatuanRequest({ filter: `search=${filter}&visibility=trakorps` }).then((res) => {
             setSatuan(res);
         });
     }
