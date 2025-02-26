@@ -83,7 +83,7 @@ const BinmanPersListPage = () => {
                                         <div className="flex gap-2">
                                             <div className="leading-5">
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Tgl Lahir</span>
                                                         <span>:</span>
                                                     </div>
@@ -92,7 +92,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Tmp Lahir</span>
                                                         <span>:</span>
                                                     </div>
@@ -101,7 +101,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Agama</span>
                                                         <span>:</span>
                                                     </div>
@@ -110,7 +110,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Suku Bangsa</span>
                                                         <span>:</span>
                                                     </div>
@@ -119,7 +119,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Gol Darah</span>
                                                         <span>:</span>
                                                     </div>
@@ -133,7 +133,7 @@ const BinmanPersListPage = () => {
                                         <div className="flex gap-2">
                                             <div className="leading-5">
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Jabatan</span>
                                                         <span>:</span>
                                                     </div>
@@ -142,7 +142,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Pangkat</span>
                                                         <span>:</span>
                                                     </div>
@@ -151,7 +151,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Korps</span>
                                                         <span>:</span>
                                                     </div>
@@ -160,7 +160,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Sumber PA</span>
                                                         <span>:</span>
                                                     </div>
@@ -169,7 +169,16 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
+                                                        <span className="font-medium">TMT Sumber</span>
+                                                        <span>:</span>
+                                                    </div>
+                                                    <div className="grow">
+                                                        <span className="font-medium"> {item.tmt_1 ?? '-'}</span>
+                                                    </div>
+                                                </div>
+                                                <div className="flex gap-1">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">TMT TNI</span>
                                                         <span>:</span>
                                                     </div>
@@ -178,7 +187,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">TMT Jab</span>
                                                         <span>:</span>
                                                     </div>
@@ -187,7 +196,7 @@ const BinmanPersListPage = () => {
                                                     </div>
                                                 </div>
                                                 <div className="flex gap-1">
-                                                    <div className="w-16 max-w-16 min-w-16 flex justify-between">
+                                                    <div className="w-20 max-w-20 min-w-20 flex justify-between">
                                                         <span className="font-medium">Psi</span>
                                                         <span>:</span>
                                                     </div>

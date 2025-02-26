@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { getPersonilRequest } from "../../api/PersonilRequest";
+import { getLocalUser } from "../../service/LocalStorage";
 
 const BinmanPersContext = createContext();
 
@@ -12,18 +13,20 @@ export const BinmanPersContextProvider = ({ children }) => {
     const [personil, setPersonil] = useState({});
 
     const getPersonil = async ({ search = "", tmt_1 }) => {
+        const user = getLocalUser();
         setPersonil({});
-        await getPersonilRequest({ filter: `per_page=20&sumber_pa=${location?.state?.category}&tmt_tni=${tmt_1 ?? (filter.tmt_1 ?? '')}&search=${search}` }).then((res) => {
+        await getPersonilRequest({ filter: `per_page=20${user.user?.satuan_id ? '&satuan_id=' + user.user?.satuan_id ?? '' : ''}&sumber_pa=${location?.state?.category}&tmt_1=${tmt_1 ?? (filter.tmt_1 ?? '')}&search=${search}` }).then((res) => {
             setPersonil(res);
         });
     }
 
     const handleScroll = async (event) => {
+        const user = getLocalUser();
         const { scrollTop, scrollHeight, clientHeight } = event.target;
         // Cek apakah scroll sudah mentok ke bawah
         if ((scrollTop + 1) + clientHeight >= scrollHeight && !personil.loading) {
             setPersonil({ ...personil, loading: true });
-            await getPersonilRequest({ filter: `page=${(personil.current_page ?? 1) + 1}&per_page=20&sumber_pa=${location?.state?.category}&tmt_tni=${filter.tmt_1 ?? ''}&search=${filter.search ?? ''}` }).then((res) => {
+            await getPersonilRequest({ filter: `page=${(personil.current_page ?? 1) + 1}&per_page=20${user.user?.satuan_id ? '&satuan_id=' + user.user?.satuan_id ?? '' : ''}&sumber_pa=${location?.state?.category}&tmt_1=${filter.tmt_1 ?? ''}&search=${filter.search ?? ''}` }).then((res) => {
                 setPersonil({ ...res, data: [...(personil.data ?? []), ...res.data], loading: false });
             });
         }

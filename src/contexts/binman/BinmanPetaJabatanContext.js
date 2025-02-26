@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { getSatuanRequest } from "../../api/SatuanRequest";
+import { getLocalUser } from "../../service/LocalStorage";
 import { useSatuanStore } from "../../store";
 
 const BinmanPetaJabatanContext = createContext();
@@ -12,7 +13,8 @@ export const BinmanPetaJabatanContextProvider = ({ children }) => {
     const setSatuan = useSatuanStore((state) => state.setSatuan);
 
     const getSatuan = async ({ filter = "" }) => {
-        await getSatuanRequest({ filter: `search=${filter}&visibility=trakorps` }).then((res) => {
+        const user = getLocalUser();
+        await getSatuanRequest({ filter: `search=${filter}${user.user?.satuan_id ? '&id=' + user.user?.satuan_id ?? '' : ''}&visibility=trakorps` }).then((res) => {
             setSatuan(res);
             console.log(res);
         });
