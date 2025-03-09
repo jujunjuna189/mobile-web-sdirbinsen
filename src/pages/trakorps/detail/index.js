@@ -1,4 +1,4 @@
-import { bnrBg, icCultural, icExperts, icMarchingBand, icMarchingBand2, icMilitary, icMilitaryMan, icSoldier, icWorldWar, imgMainBg } from "../../../assets";
+import { bnrBg, icCultural, icExperts, icMarchingBand, icMarchingBand2, icMilitary, icMilitaryMan, icMore, icSoldier, icWorldWar, imgMainBg } from "../../../assets";
 import { Content, Navbar } from "../../../components";
 import { UseTrakorpsDetailContext } from "../../../contexts/trakorps/TrakorpsDetailContext";
 import { RouterName } from "../../../utils";
@@ -90,6 +90,14 @@ const TrakorpsDetailPage = () => {
                         </div>
                         <div className="text-center">
                             <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Lagu Hymne</strong>
+                        </div>
+                    </div>
+                    <div className="bg-[#4B7D5E] rounded-md flex gap-2 items-center px-3 mt-2" onClick={() => navigation(RouterName.trakorpsDetailLainLain, { state: { satuan: { id: satuan.id } } })}>
+                        <div className="flex justify-center items-center py-2">
+                            <img src={icMore} alt="icon" className="w-[30px] shadow-lg" />
+                        </div>
+                        <div className="text-center">
+                            <strong className="text-white font-black" style={{ textShadow: "0px 1px 3px #000000" }}>Lain Lain</strong>
                         </div>
                     </div>
                 </div>

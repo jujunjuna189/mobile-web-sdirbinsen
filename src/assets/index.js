@@ -57,6 +57,7 @@ import icMateriel from "./icon/icMateriel.png";
 import icContinuous from "./icon/icContinuous.png";
 import icHourglass from "./icon/icHourglass.png";
 import icStickyNote from "./icon/icStickyNote.png";
+import icMore from "./icon/icMore.png";
 import bnrName from "./banner/bannerName.webp";
 import bnrBg from "./banner/bannerBg.webp";
 import fnAgencyFbBold from "./font/agencyfb_bold.ttf";
@@ -122,6 +123,7 @@ export {
     icContinuous,
     icHourglass,
     icStickyNote,
+    icMore,
     bnrName,
     bnrBg,
     fnAgencyFbBold,

@@ -20,9 +20,10 @@ import { TrakorpsDetailContextProvider } from './contexts/trakorps/TrakorpsDetai
 import { TrakorpsDetailDataPejabatDansatContextProvider } from './contexts/trakorps/TrakorpsDetailDataPejabatDansatContext';
 import { TrakorpsDetailDataPrestasiContextProvider } from './contexts/trakorps/TrakorpsDetailDataPrestasiContext';
 import { TrakorpsDetailDataPurnawirawanContextProvider } from './contexts/trakorps/TrakorpsDetailDataPurnawirawanContext';
+import { TrakorpsDetailLainLainContextProvider } from './contexts/trakorps/TrakorpsDetailLainLainContext';
 import { TrakorpsDetailLambangSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailLambangSatuanContext';
 import { TrakorpsDetailTradisiSatuanContextProvider } from './contexts/trakorps/TrakorpsDetailTradisiSatuanContext';
-import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinmatSubPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatgasMenusPage, BinsiapsatSatgasPreviewPage, BinsiapsatSatgasSatuanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, ReferensiPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsMenusPrestasiPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
+import { BinmanKompersSatjarPage, BinmanPage, BinmanPersListPage, BinmanPersPage, BinmanPetaJabatanListPage, BinmanPetaJabatanPage, BinmatListPage, BinmatPage, BinmatSatuanPage, BinmatSubPage, BinsiapsatPage, BinsiapsatPembinaanPage, BinsiapsatSatgasMenusPage, BinsiapsatSatgasPreviewPage, BinsiapsatSatgasSatuanPage, BinsiapsatSatuanPage, BoardPage, BukuPintarListPage, BukuPintarPage, LoginPage, ReferensiPage, TrakorpsDataPejabatDansatPage, TrakorpsDataPrestasiPage, TrakorpsDataPurnawirawanPage, TrakorpsDetailPage, TrakorpsHymnePage, TrakorpsLainLainPage, TrakorpsLambangSatuanPage, TrakorpsMarsPage, TrakorpsMenusPrestasiPage, TrakorpsPage, TrakorpsSejarahPage, TrakorpsTradisiSatuanPage } from './pages';
 import { RouterName } from './utils';
 
 function App() {
@@ -94,6 +95,11 @@ function App() {
           <TrakorpsDetailDataPurnawirawanContextProvider>
             <TrakorpsDataPurnawirawanPage />
           </TrakorpsDetailDataPurnawirawanContextProvider>
+        } />
+        <Route path={RouterName.trakorpsDetailLainLain} element={
+          <TrakorpsDetailLainLainContextProvider>
+            <TrakorpsLainLainPage />
+          </TrakorpsDetailLainLainContextProvider>
         } />
         {/* Binman */}
         <Route path={RouterName.binman} element={

@@ -28,6 +28,7 @@ import TrakorpsMenusPrestasiPage from "./trakorps/detail/data_prestasi/menus";
 import TrakorpsDataPurnawirawanPage from "./trakorps/detail/data_purnawirawan";
 import TrakorpsHymnePage from "./trakorps/detail/lagu_hymne";
 import TrakorpsMarsPage from "./trakorps/detail/lagu_mars";
+import TrakorpsLainLainPage from "./trakorps/detail/lain_lain";
 import TrakorpsLambangSatuanPage from "./trakorps/detail/lambang_satuan";
 import TrakorpsSejarahPage from "./trakorps/detail/sejarah";
 import TrakorpsTradisiSatuanPage from "./trakorps/detail/tradisi_satuan";
@@ -46,6 +47,7 @@ export {
     TrakorpsHymnePage,
     TrakorpsMarsPage,
     TrakorpsDataPejabatDansatPage,
+    TrakorpsLainLainPage,
     BinmanPage,
     BinmanPersPage,
     BinmanPersListPage,
